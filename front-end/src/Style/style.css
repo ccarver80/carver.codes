@@ -1,0 +1,13 @@
+
+.center-div {
+   margin-left: 5rem;
+   margin-right: 5rem; 
+   margin-top: 5rem;
+   display: flex;
+   justify-content: center;
+}
+
+.center-text {
+   display: block;
+   text-align: center;
+}

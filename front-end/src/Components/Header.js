@@ -1,8 +1,9 @@
 import React from "react";
+import Progress from "./Progress";
 
 const Header = () => {
     return (
-        <h1>Header</h1>
+        <Progress />
     )
 }
 
