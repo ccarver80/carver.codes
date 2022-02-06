@@ -1,2 +1,3 @@
 # Local Netlify folder
 .netlify
+./back-end/node_modules
