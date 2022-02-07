@@ -14,7 +14,7 @@ import NotFound from './Components/NotFound';
 function App() {
   return (
   <BrowserRouter>
-    <Header />
+    {/* <Header /> */}
     <Routes>
       <Route exact path='/' element={<Landing />} />
       <Route path='/home' element={<Home />} /> 
