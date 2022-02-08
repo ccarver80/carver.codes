@@ -4,6 +4,7 @@ const Progress = () => {
   return (
     <div className="center-div">
       <div className="center-text">
+        <h1>THIS SITE IS STILL UNDER CONSTRUCTION</h1>
         <h1>Updates:</h1>
         <h2>02/06/2022</h2>
         <p>

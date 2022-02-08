@@ -1,6 +1,8 @@
 import React from "react";
+import {Link} from "react-router-dom"
 import profilePic from '../Imgs/profile.png'
 
+const resume = ''
 const AboutMe = () => {
   return (
     <div className="center-div">
@@ -24,14 +26,16 @@ const AboutMe = () => {
           in October 2020 with "Python For Everybody" on Coursera.This is where I
           learned the fundamentals of programming. After that I started learning
           HTML and CSS and eventually found Team Treehouse where I started the Full
-          Stack JavaScript Tech Degree learning React, Node and Express,
+          Stack JavaScript Tech Degree learning React, Node, Express,
           API's and so much more. I Finished the Tech Degree in February 2022.
           All 10 projects from the Tech Degree can be found on my GitHub account.
         </p>
         <div className="icons">
-        <i class="far fa-file fa-2x">Resume</i>
+       <a href=""><i class="far fa-file fa-2x">Resume</i></a>
         <i class="fab fa-linkedin-in fa-2x"></i>
         <i class="fab fa-github fa-2x"></i>
+        <i class="fas fa-certificate">Tech Degree</i>
+        
         </div>
       </div>
     </div>
