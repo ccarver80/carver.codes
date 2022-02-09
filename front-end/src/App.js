@@ -1,4 +1,6 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import {Canvas} from '@react-three/fiber'
+import {OrbitControls, Stars, Html, Scroll, ScrollControls} from '@react-three/drei'
 import './Style/style.css'
 
 // Components
@@ -10,20 +12,28 @@ import Projects from './Components/Projects';
 import Blog from './Components/Blog';
 import NotFound from './Components/NotFound';
 
+function Box() {
+  return (
+    <mesh>
+      <sphereBufferGeometry attach='geometry' />
+      <meshLambertMaterial attach='material' color='blue' />
+    </mesh>
+  )
+}
 
 function App() {
-  return (
-  <BrowserRouter>
-    {/* <Header /> */}
-    <Routes>
-      <Route exact path='/' element={<Landing />} />
-      <Route path='/home' element={<Home />} /> 
-      <Route path='/about' element={<AboutMe />} />
-      <Route path='/projects' element={<Projects />} />
-      <Route path='/blog' element={<Blog />} /> 
-      <Route path='*' element={<NotFound />} /> 
-    </Routes>
-  </BrowserRouter>
+  return ( 
+  <Canvas>
+    
+    <ambientLight intensity={.5}/>
+    <spotLight position={[10,10,10]} />
+      <Html>
+        <p>Hello</p>
+      </Html>
+    <OrbitControls/> 
+    <Box position={[0,10,0]} />
+    <Stars />
+  </Canvas>
   );
 }
 
