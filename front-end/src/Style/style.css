@@ -1,7 +1,6 @@
-p {
-   background-color: gray;
+h1 {
    color: white;
-   size: 100rem;
+   font-size: 10px;
 }
 html,
 body,
