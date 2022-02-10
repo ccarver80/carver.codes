@@ -1,5 +1,7 @@
 p {
+   background-color: gray;
    color: white;
+   size: 100rem;
 }
 html,
 body,
