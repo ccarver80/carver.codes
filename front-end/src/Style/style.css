@@ -1,4 +1,4 @@
-h1 {
+.planetText {
    color: white;
    font-size: 10px;
 }
@@ -20,22 +20,24 @@ body,
    background-color: black;
 } 
 
-
-.center-div {
-   margin-left: 5rem;
-   margin-right: 5rem; 
-   margin-top: 5rem;
-   display: flex;
-   justify-content: center;
-   padding: 2rem;
-   background-color: rgba(0, 0, 0, .5);
-   color: white;
-   
+.center-div{
+   line-height: 2;
+   color: black;
+   font-size: 2rem;
 }
 
-.center-text {
-   display: block;
-   text-align: center;
+@media screen and (max-width: 700px) {
+ 
+   .center-div {
+      line-height: normal;
+      font-size: 1.5rem;
+   }
+}
+
+@media  screen and (max-width: 350px) {
+   .center-div {
+      font-size: 1rem;
+   }
 }
 
 .card {

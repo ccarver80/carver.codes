@@ -24,7 +24,7 @@ function Planet1() {
     <mesh scale={3} position={[-5, 0, 200]}>
      <Html transform={true}>
      <a href='/about'>
-      <h1>About Me</h1></a>
+      <h1 className="planetText">About Me</h1></a>
     </Html>
       <sphereBufferGeometry attach='geometry' />
       <meshLambertMaterial attach='material' color='red' />
@@ -37,7 +37,7 @@ function Planet2() {
     <mesh scale={3}  position={[5, 0, 150]}>
      <Html transform={true}>
      <a href="/projects">
-      <h1>Projects</h1></a>
+      <h1 className="planetText">Projects</h1></a>
     </Html>
       
       <sphereBufferGeometry attach='geometry'/>
@@ -52,7 +52,7 @@ function Planet3() {
   return (
     <mesh scale={3} position={[-5, 0, 100]}>
        <Html transform={true}>
-      <h1>Skills</h1>
+      <h1 className="planetText">Skills</h1>
     </Html>
       <sphereBufferGeometry attach='geometry'/>
       <meshLambertMaterial attach='material' color='purple' />
@@ -63,11 +63,10 @@ function Planet3() {
 }
 const Landing = () => {
   return (
-    <Canvas camera={{position: [0,0,250]}} >
+    <Canvas camera={{position: [0,0,215]}} >
     <ambientLight intensity={0.2} />
     <spotLight intensity={10} position={[0,0,40]} />
     <ContactShadows />
-    <FlyControls movementSpeed={50} />
     <TrackballControls />
     <pointLight intensity={10} position={[-10, 0, 0]} />
     <Planet3 />
