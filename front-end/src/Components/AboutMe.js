@@ -1,18 +1,20 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import {Billboard, Html, Text, FlyControls, TrackballControls, Sky, Scroll, ScrollControls, OrbitControls } from "@react-three/drei";
-import { SrcAlphaFactor } from "three";
+import {Billboard, Html, Sky, OrbitControls, useTexture } from "@react-three/drei"
+import gasGiant from '../Imgs/planetTexture/Gaseous1.png'
 
 function Plane () {
+  const gas = useTexture(gasGiant)
   return(
     <mesh position={[0, -5, 0]} rotation={[-Math.PI / 2, 0, 0]}>
       <planeBufferGeometry attach="geometry" args={[1000, 1000]} />
-      <meshLambertMaterial attach="material" color="red" />
+      <meshLambertMaterial map={gas} />
     </mesh>
   )
 }
 
 function Mountain() {
+
   return (
     <mesh scale={10}  position={[-20, 0, 50]}>
       <coneBufferGeometry attach='geometry'/>
@@ -24,6 +26,7 @@ function Mountain() {
 const AboutMe = () => {
   return (
    <Canvas camera={{position: [0, 0, -25]}}>
+   <Suspense fallback={null}>
    <ambientLight intensity={.5} />
 
     <OrbitControls enableZoom={false} />
@@ -62,6 +65,7 @@ const AboutMe = () => {
 
      <Sky sunPosition={[0, 1, 0]} />
      <Plane />
+     </Suspense>
    </Canvas>
   );
 };
