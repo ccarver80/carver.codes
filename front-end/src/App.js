@@ -4,6 +4,7 @@ import './Style/style.css'
 
 
 // Components
+import Home from './Components/Home'
 import Landing from "./Components/Landing"
 import AboutMe from "./Components/AboutMe";
 import Projects from './Components/Projects';
@@ -13,11 +14,13 @@ import NotFound from './Components/NotFound';
 
 
 
+
 function App() {
   return ( 
     <BrowserRouter>
     <Routes>
-      <Route exact path='/' element={<Landing />} />
+      <Route exact path='/' element={<Home />} />
+      <Route path='/landing' element={<Landing />} />
       <Route path='/about' element={<AboutMe />} />
       <Route path='/projects' element={<Projects />} />
       <Route path='/blog' element={<Blog />} /> 

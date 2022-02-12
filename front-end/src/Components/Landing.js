@@ -21,69 +21,8 @@ import blue from "../Imgs/planetTexture/blue.jpg";
 import venusmoon from '../Imgs/planetTexture/Venusian.png'
 import volcanicmoon from '../Imgs/planetTexture/Volcanic.png'
 
-function Sun() {
-  const Sun = useTexture(sunny);
-  return (
-    <mesh scale={20} position={[0, 0, 0]}>
-      <sphereBufferGeometry attach="geometry" />
-      <meshLambertMaterial map={Sun} />
-    </mesh>
-  );
-}
-
-
-function Moon(props) {
-  useFrame(({ clock }) => {
-    const getElapsedTime = clock.getElapsedTime();
-    
-      let x =  props.pos[0]
-      let y = props.pos[1]
-      let z = props.pos[2]
-
-      x += Math.sin(getElapsedTime / props.speed) * props.dist
-      z += Math.cos(getElapsedTime / props.speed) * props.dist
-      myMesh.current.position.set(x, y, z)
-  
-    
-    myMesh.current.rotation.y = getElapsedTime / props.spin;
-  });
-
-  const myMesh = React.useRef();
-  const Texture = useTexture(props.texture);
-  return (
-    <mesh ref={myMesh} scale={props.scale} position={props.pos}>
-      <sphereBufferGeometry attach="geometry" />
-      <meshStandardMaterial map={Texture} />
-    </mesh>
-  );
-}
-
-function Planet(props) {
-  useFrame(({ clock }) => {
-    const getElapsedTime = clock.getElapsedTime();
-   
-    myMesh.current.rotation.y = getElapsedTime / props.spin;
-
-
-  });
-  const myMesh = React.useRef();
-  const Texture = useTexture(props.texture);
-  return (
-    <>
-      <Billboard scale={10} position={props.pos}>
-        <Html transform={true}>
-          <a href={props.location}>
-            <h1 className={props.planetText}>{props.text}</h1>
-          </a>
-        </Html>
-      </Billboard>
-      <mesh ref={myMesh} scale={props.scale} position={props.pos}>
-        <sphereBufferGeometry attach="geometry" />
-        <meshStandardMaterial map={Texture} />
-      </mesh>
-    </>
-  );
-}
+//import plantet functions
+import{Sun, Moon, Planet} from './Planets'
 
 const Landing = () => {
   return (
@@ -91,6 +30,8 @@ const Landing = () => {
     <Suspense fallback={<Loading />}>
       <Canvas camera={{ position: [-30, 10, 140] }}>
         <ambientLight intensity={0.8} />
+
+
 
         {/* Adds spotlights all around sun making it super bright looking */}
         <spotLight intensity={8} position={[0, 0, 40]} />
@@ -146,12 +87,23 @@ const Landing = () => {
           text="Contact Me"
           spin={3}
         />
-        <Sun />
+        <Sun texture={sunny} scale={20}/>
         <Moon texture={moon} pos={[-5, 0, 100]} dist={20} speed={-1} scale={1} spin={3} />
         <Moon texture={venusmoon} pos={[-5, 3, 100]} scale={1} dist={25} speed={3} spin={5} />
         <Moon texture={moon} pos={[50, 0, -30]} scale={1} dist={15} speed={-3} spin={5} />
         <Moon texture={volcanicmoon} pos={[-60, 0, -10]} scale={2} dist={10} speed={-1} spin={5} />
         <Stars radius={100} count={10000} />
+
+        <Billboard position={[-25, -3, 120]}>
+          <Html transform={true}>
+            <div className="center-div">
+              <div className="move-around">
+                <h1>Move around and click on planets using your finger or mouse!</h1>
+               
+              </div>
+            </div>
+          </Html>
+        </Billboard>
       </Canvas>
     </Suspense>
   );
