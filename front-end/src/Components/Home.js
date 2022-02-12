@@ -39,7 +39,7 @@ const Home = () => {
         <Planet planetOrbit={true} dist={40} speed={2} texture={earthy} pos={[20, 0, -30]} scale={3} spin={3} />
         <Billboard position={[0, 13, 170]}>
           <Html transform={true}>
-            <div className="center-div">
+            
               <div className="home">
                 <h1>Welcome to my corner of the universe!</h1>
                 <h2>
@@ -54,7 +54,6 @@ const Home = () => {
                 >
                   Fly to my solar system!
                 </button>
-              </div>
             </div>
           </Html>
         </Billboard>

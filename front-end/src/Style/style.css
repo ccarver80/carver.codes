@@ -1,7 +1,7 @@
-.loading {
-  margin-left: 5rem;
-  margin-right: 5rem;
-  margin-top: 5rem;
+.center-div {
+  margin-left: 3rem;
+  margin-right:3rem;
+  margin-top: 3rem;
   display: flex;
   justify-content: center;
   padding: 2rem;
@@ -63,13 +63,12 @@ body,
   background-color: black;
 }
 
-.center-div {
-  line-height: 2;
-  color: black; 
-  font-size: 2rem;
-}
 
 @media screen and (max-width: 700px) {
+  .home {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
   .center-div {
     line-height: normal;
     font-size: 1.5rem;
@@ -79,6 +78,5 @@ body,
 @media screen and (max-width: 350px) {
   .center-div {
     font-size: 1rem;
-    width: auto;
   }
 }
