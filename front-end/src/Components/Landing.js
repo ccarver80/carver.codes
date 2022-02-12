@@ -8,7 +8,7 @@ import {
   Billboard,
   useTexture,
 } from "@react-three/drei";
-
+import Loading from "./Loading";
 //Textures for planets
 import gasy from "../Imgs/planetTexture/Gaseous1.png";
 import earthy from "../Imgs/planetTexture/Savannah.png";
@@ -158,9 +158,9 @@ function Planet5() {
 }
 const Landing = () => {
   return (
-    <Canvas camera={{ position: [-10, 0, 130] }}>
-      <Suspense fallback={null}>
-        <ambientLight intensity={0.5} />
+    <Suspense fallback={<Loading />}>
+      <Canvas camera={{ position: [-10, 0, 130] }}>
+        <ambientLight intensity={0.8} />
         <spotLight intensity={8} position={[0, 0, 40]} />
         <spotLight intensity={8} position={[0, 0, -40]} />
         <spotLight intensity={8} position={[40, 0, 0]} />
@@ -176,8 +176,8 @@ const Landing = () => {
         <Planet1 />
         <Sun />
         <Stars radius={100} count={10000} />
-      </Suspense>
-    </Canvas>
+      </Canvas>{" "}
+    </Suspense>
   );
 };
 

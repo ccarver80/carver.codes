@@ -1,3 +1,14 @@
+.loading {
+   margin-left: 5rem;
+   margin-right: 5rem; 
+   margin-top: 5rem;
+   display: flex;
+   justify-content: center;
+   padding: 2rem;
+   background-color: rgba(0, 0, 0, .5);
+   color: white;
+}
+
 .planetText {
    color: white;
    font-size: 10px;
@@ -40,16 +51,3 @@ body,
    }
 }
 
-.card {
-   border-radius: 10%;
-   padding: 1rem;
-   margin: 1rem;
-   display: inline-flex;
-   text-align: center;
-   font-size: 1rem;
-   
-}
-
-.icons i {
-   padding: 1rem;
-}
