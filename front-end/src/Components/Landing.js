@@ -9,6 +9,7 @@ import {
   useTexture,
 } from "@react-three/drei";
 import Loading from "./Loading";
+
 //Textures for planets
 import gasy from "../Imgs/planetTexture/Gaseous1.png";
 import earthy from "../Imgs/planetTexture/Savannah.png";
@@ -17,6 +18,8 @@ import martian from "../Imgs/planetTexture/Martian.png";
 import sunny from "../Imgs/planetTexture/sun.png";
 import habit from "../Imgs/planetTexture/Tropical.png";
 import blue from "../Imgs/planetTexture/blue.jpg";
+import venusmoon from '../Imgs/planetTexture/Venusian.png'
+import volcanicmoon from '../Imgs/planetTexture/Volcanic.png'
 
 function Sun() {
   const Sun = useTexture(sunny);
@@ -28,139 +31,68 @@ function Sun() {
   );
 }
 
-function Planet1() {
+
+function Moon(props) {
   useFrame(({ clock }) => {
     const getElapsedTime = clock.getElapsedTime();
+    
+      let x =  props.pos[0]
+      let y = props.pos[1]
+      let z = props.pos[2]
 
-    myMesh.current.rotation.y = getElapsedTime / 6;
+      x += Math.sin(getElapsedTime / props.speed) * props.dist
+      z += Math.cos(getElapsedTime / props.speed) * props.dist
+      myMesh.current.position.set(x, y, z)
+  
+    
+    myMesh.current.rotation.y = getElapsedTime / props.spin;
+  });
+
+  const myMesh = React.useRef();
+  const Texture = useTexture(props.texture);
+  return (
+    <mesh ref={myMesh} scale={props.scale} position={props.pos}>
+      <sphereBufferGeometry attach="geometry" />
+      <meshStandardMaterial map={Texture} />
+    </mesh>
+  );
+}
+
+function Planet(props) {
+  useFrame(({ clock }) => {
+    const getElapsedTime = clock.getElapsedTime();
+   
+    myMesh.current.rotation.y = getElapsedTime / props.spin;
+
+
   });
   const myMesh = React.useRef();
-  const Gas = useTexture(gasy);
+  const Texture = useTexture(props.texture);
   return (
     <>
-      <Billboard scale={10} position={[-5, 0, 100]}>
+      <Billboard scale={10} position={props.pos}>
         <Html transform={true}>
-          <a href="/about">
-            <h1 className="planetText">About Me</h1>
+          <a href={props.location}>
+            <h1 className={props.planetText}>{props.text}</h1>
           </a>
         </Html>
       </Billboard>
-      <mesh ref={myMesh} scale={10} position={[-5, 0, 100]}>
+      <mesh ref={myMesh} scale={props.scale} position={props.pos}>
         <sphereBufferGeometry attach="geometry" />
-        <meshStandardMaterial map={Gas} />
+        <meshStandardMaterial map={Texture} />
       </mesh>
     </>
   );
 }
 
-function Planet2() {
-  useFrame(({ clock }) => {
-    const getElapsedTime = clock.getElapsedTime();
-
-    myMesh.current.rotation.y = getElapsedTime / 4;
-  });
-  const myMesh = React.useRef();
-
-  const Blue = useTexture(blue);
-  return (
-    <>
-      <Billboard scale={5} position={[5, 0, -110]}>
-        <Html transform={true}>
-          <a href="/projects">
-            <h1 className="planetText">Skills</h1>
-          </a>
-        </Html>
-      </Billboard>
-      <mesh ref={myMesh} scale={3} position={[5, 0, -110]}>
-        <sphereBufferGeometry attach="geometry" />
-        <meshStandardMaterial map={Blue} />
-      </mesh>
-    </>
-  );
-}
-
-function Planet3() {
-  useFrame(({ clock }) => {
-    const getElapsedTime = clock.getElapsedTime();
-
-    myMesh.current.rotation.y = getElapsedTime / 2;
-  });
-  const myMesh = React.useRef();
-
-  const Earth = useTexture(earthy);
-  return (
-    <>
-      <Billboard scale={8} position={[-50, 0, -50]}>
-        <Html transform={true}>
-          <h1 className="planetText">Blog</h1>
-        </Html>
-      </Billboard>
-      <mesh ref={myMesh} scale={5} position={[-50, 0, -50]}>
-        <sphereBufferGeometry attach="geometry" />
-        <meshLambertMaterial map={Earth} />
-      </mesh>
-    </>
-  );
-}
-
-function Planet4() {
-  useFrame(({ clock }) => {
-    const getElapsedTime = clock.getElapsedTime();
-
-    myMesh.current.rotation.y = getElapsedTime / 3;
-  });
-  const myMesh = React.useRef();
-
-  const Mars = useTexture(martian);
-
-  return (
-    <>
-      <Billboard scale={8} position={[90, 0, 50]}>
-        <Html transform={true}>
-          <a href="/about">
-            <h1 className="planetText">Projects</h1>
-          </a>
-        </Html>
-      </Billboard>
-      <mesh ref={myMesh} scale={6} position={[90, 0, 50]}>
-        <sphereBufferGeometry attach="geometry" />
-        <meshLambertMaterial map={Mars} />
-      </mesh>
-    </>
-  );
-}
-
-function Planet5() {
-  useFrame(({ clock }) => {
-    const getElapsedTime = clock.getElapsedTime();
-
-    myMesh.current.rotation.y = getElapsedTime / 3;
-  });
-  const myMesh = React.useRef();
-
-  const Habit = useTexture(habit);
-
-  return (
-    <>
-      <Billboard scale={8} position={[40, 0, -50]}>
-        <Html transform={true}>
-          <a href="/about">
-            <h1 className="planetText">Contact me</h1>
-          </a>
-        </Html>
-      </Billboard>
-      <mesh ref={myMesh} scale={8} position={[40, 0, -50]}>
-        <sphereBufferGeometry attach="geometry" />
-        <meshStandardMaterial map={Habit} />
-      </mesh>
-    </>
-  );
-}
 const Landing = () => {
   return (
+
     <Suspense fallback={<Loading />}>
-      <Canvas camera={{ position: [-10, 0, 130] }}>
+      <Canvas camera={{ position: [-30, 10, 140] }}>
         <ambientLight intensity={0.8} />
+
+        {/* Adds spotlights all around sun making it super bright looking */}
         <spotLight intensity={8} position={[0, 0, 40]} />
         <spotLight intensity={8} position={[0, 0, -40]} />
         <spotLight intensity={8} position={[40, 0, 0]} />
@@ -169,14 +101,58 @@ const Landing = () => {
         <spotLight intensity={8} position={[0, -40, 0]} />
         <ContactShadows />
         <OrbitControls enableZoom={false} />
-        <Planet5 />
-        <Planet4 />
-        <Planet3 />
-        <Planet2 />
-        <Planet1 />
+        <Planet
+          texture={gasy}
+          planetText="planetText"
+          location="/about"
+          pos={[-5, 0, 100]}
+          scale={10}
+          text="About Me"
+          spin={6}
+        />
+        <Planet
+          texture={blue}
+          planetText="planetText"
+          location="/skills"
+          pos={[5, 0, -75]}
+          scale={5}
+          text="Skills"
+          spin={4}
+        />
+        <Planet
+          texture={martian}
+          planetText="planetText"
+          location="/projects"
+          pos={[90, 0, 50]}
+          scale={6}
+          text="Projects"
+          spin={3}
+        />
+        <Planet
+          texture={habit}
+          planetText="planetText-blog"
+          location="/blog"
+          pos={[-60, 0, -10]}
+          scale={5}
+          text="Blog"
+          spin={2}
+        />
+        <Planet
+          texture={earthy}
+          planetText="planetText"
+          location="/contact-me"
+          pos={[50, 0, -30]}
+          scale={8}
+          text="Contact Me"
+          spin={3}
+        />
         <Sun />
+        <Moon texture={moon} pos={[-5, 0, 100]} dist={20} speed={-1} scale={1} spin={3} />
+        <Moon texture={venusmoon} pos={[-5, 3, 100]} scale={1} dist={25} speed={3} spin={5} />
+        <Moon texture={moon} pos={[50, 0, -30]} scale={1} dist={15} speed={-3} spin={5} />
+        <Moon texture={volcanicmoon} pos={[-60, 0, -10]} scale={2} dist={10} speed={-1} spin={5} />
         <Stars radius={100} count={10000} />
-      </Canvas>{" "}
+      </Canvas>
     </Suspense>
   );
 };
