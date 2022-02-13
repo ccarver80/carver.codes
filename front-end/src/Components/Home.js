@@ -26,18 +26,18 @@ const Home = () => {
 
   return (
     <Suspense fallback={<Loading />}>
-      <Canvas camera={{ position: [-5, 30, 200] }}>
+      <Canvas camera={{ position: [-5, 34, 200] }}>
         <Sun texture={sunny} scale={5} />
         <spotLight intensity={8} position={[0, 0, 40]} />
         <ambientLight intensity={0.8} />
         <OrbitControls />
         <Stars />
-        <Planet planetOrbit={true} dist={50} speed={5} texture={gasy} pos={[-5, 0, 50]} scale={3} spin={6} />
-        <Planet planetOrbit={true} dist={30} speed={2} texture={blue} pos={[5, 0, -30]} scale={2} spin={4} />
-        <Planet planetOrbit={true} dist={20} speed={3} texture={martian} pos={[30, 0, 20]} scale={2} spin={3} />
-        <Planet planetOrbit={true} dist={30} speed={4} texture={habit} pos={[-30, 0, -10]} scale={3} spin={2} />
-        <Planet planetOrbit={true} dist={40} speed={2} texture={earthy} pos={[20, 0, -30]} scale={3} spin={3} />
-        <Billboard position={[0, 13, 170]}>
+        <Planet planetOrbit={true} dist={60} speed={5} texture={gasy} pos={[-5, 0, 50]} scale={3} spin={6} />
+        <Planet planetOrbit={true} dist={40} speed={2} texture={blue} pos={[5, 0, -30]} scale={2} spin={4} />
+        <Planet planetOrbit={true} dist={20} speed={2.5} texture={martian} pos={[30, 0, 20]} scale={2} spin={3} />
+        <Planet planetOrbit={true} dist={30} speed={3} texture={habit} pos={[-30, 0, -10]} scale={3} spin={2} />
+        <Planet planetOrbit={true} dist={50} speed={4} texture={earthy} pos={[20, 0, -30]} scale={3} spin={3} />
+        <Billboard position={[-4, 13, 170]}>
           <Html transform={true}>
             
               <div className="home">

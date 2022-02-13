@@ -96,11 +96,11 @@ const Landing = () => {
 
         <Billboard position={[-25, -3, 120]}>
           <Html transform={true}>
-            <div className="center-div">
+            
               <div className="move-around">
                 <h1>Move around and click on planets using your finger or mouse!</h1>
                
-              </div>
+             
             </div>
           </Html>
         </Billboard>

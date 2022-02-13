@@ -23,7 +23,7 @@
 
 .home {
   border-radius: 5%;
-  background-color: bisque;
+  background-color: white;
   text-align: center;
   color: black;
   font-size: 2rem;
@@ -31,9 +31,9 @@
 }
 
 .enter-button {
-  background-color: brown;
+  background-color: red;
   padding: 1rem;
-  color: black;
+  color: white;
   font-size: 2rem;
   
 }
@@ -66,8 +66,7 @@ body,
 
 @media screen and (max-width: 700px) {
   .home {
-    margin-left: 1rem;
-    margin-right: 1rem;
+    width: 50rem; 
   }
   .center-div {
     line-height: normal;
@@ -76,6 +75,10 @@ body,
 }
 
 @media screen and (max-width: 350px) {
+  .home {
+    width: 30rem;
+  }
+  
   .center-div {
     font-size: 1rem;
   }
