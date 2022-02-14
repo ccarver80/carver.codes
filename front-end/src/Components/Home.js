@@ -8,13 +8,10 @@ import Loading from "./Loading";
 //Textures for planets
 import gasy from "../Imgs/planetTexture/Gaseous1.png";
 import earthy from "../Imgs/planetTexture/Savannah.png";
-import moon from "../Imgs/planetTexture/Icy.png";
 import martian from "../Imgs/planetTexture/Martian.png";
 import sunny from "../Imgs/planetTexture/sun.png";
 import habit from "../Imgs/planetTexture/Tropical.png";
 import blue from "../Imgs/planetTexture/blue.jpg";
-import venusmoon from "../Imgs/planetTexture/Venusian.png";
-import volcanicmoon from "../Imgs/planetTexture/Volcanic.png";
 
 import { Sun, Planet } from "./Planets";
 
@@ -46,6 +43,7 @@ const Home = () => {
                   I'm Chris Carver, and I built this site using React, Three.js
                   React-Three/Fiber, and Drei
                 </h2>
+                <p>Find my social links in my About Me planet!</p>
                 <button
                   className="enter-button"
                   onClick={() => {

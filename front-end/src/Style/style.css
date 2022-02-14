@@ -78,7 +78,17 @@ body,
   padding-left: 2rem;
 }
 
+.projects {
+  width: 70rem;
+  background-color: rgba(255, 255, 255);
+  padding: 1rem;
+  font-size: 2rem;
 
+}
+
+.projects img {
+  width: 70rem;
+}
 
 @media screen and (max-width: 700px) {
   .home {

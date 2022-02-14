@@ -8,7 +8,9 @@ import {
   useTexture,
   Cloud,
 } from "@react-three/drei";
+
 import gasGiant from "../Imgs/planetTexture/Gaseous1.png";
+import Loading from "./Loading";
 
 function Plane() {
   const gas = useTexture(gasGiant);
@@ -22,8 +24,10 @@ function Plane() {
 
 const AboutMe = () => {
   return (
+  <Suspense fallback={<Loading />}>
+
     <Canvas camera={{ position: [0, 20, -25] }}>
-      <Suspense fallback={null}>
+      
         <ambientLight intensity={0.5} />
 
         <OrbitControls enableZoom={false} />
@@ -93,8 +97,9 @@ const AboutMe = () => {
         />
         <Sky sunPosition={[0, 1, 0]} />
         <Plane />
-      </Suspense>
+      
     </Canvas>
+    </Suspense>
   );
 };
 
