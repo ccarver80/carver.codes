@@ -14,6 +14,8 @@ import BlogDetail from "./Components/Functional/BlogDetail";
 import SignIn from "./Components/Functional/SignIn";
 import ProtectedRoute from "./Components/Supportive/ProtectedRoute";
 import Admin from "./Components/Functional/Admin";
+import PostBlog from "./Components/Functional/PostBlog";
+
 import NotFound from "./Components/Supportive/NotFound";
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
           
         </Route>
 <Route path="/admin" element={<Admin />} />
+<Route path='/admin/post-blog' element={<PostBlog />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
