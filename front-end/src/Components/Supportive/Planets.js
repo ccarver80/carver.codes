@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useFrame } from "@react-three/fiber";
 import { useTexture, Billboard, Html } from "@react-three/drei";
 

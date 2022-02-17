@@ -1,4 +1,5 @@
 import React, { Suspense } from "react";
+import { useNavigate } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
 import {
   Billboard,
@@ -10,7 +11,7 @@ import {
 } from "@react-three/drei";
 
 import gasGiant from "../Imgs/planetTexture/Gaseous1.png";
-import Loading from "./Loading";
+import Loading from "../Supportive/Loading";
 
 function Plane() {
   const gas = useTexture(gasGiant);
@@ -22,18 +23,23 @@ function Plane() {
   );
 }
 
+
+
 const AboutMe = () => {
+  
+  const nav = useNavigate();
+  
   return (
   <Suspense fallback={<Loading />}>
 
-    <Canvas camera={{ position: [0, 20, -25] }}>
+    <Canvas camera={{ position: [0, 10, -25] }}>
       
         <ambientLight intensity={0.5} />
 
         <OrbitControls enableZoom={false} />
 
         <mesh>
-          <Billboard position={[0, 5, 0]}>
+          <Billboard position={[0, 0, 5]}>
             <Html fullscreen transform={true}>
               <h1>Planet X6Gf4-R - About Me</h1>
               <h2>Class J Gas Giant</h2>
@@ -62,6 +68,9 @@ const AboutMe = () => {
                   <a href="https://www.instagram.com/codingcarver/" target="_blank" rel="noopener noreferrer nofollow" ><i className="fa-brands fa-instagram fa-2x"></i></a>
                   <a href="https://www.tiktok.com/@codingcarver" target="_blank" rel="noopener noreferrer nofollow" ><i class="fa-brands fa-tiktok fa-2x"></i></a>
                 </div>
+                <div><button onClick={()=> {
+                  nav('/landing')
+                }} className="enter-button">Back to space!</button></div>
               </div>
             </Html>
           </Billboard>

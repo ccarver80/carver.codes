@@ -47,7 +47,6 @@ body,
   text-align: center;
   color: black;
   font-size: 2rem;
-
   padding: 1rem;
 }
 
@@ -69,9 +68,9 @@ body,
 .about-me {
   padding: 1rem;
   text-align: justify;
-  color: navy;
-  font-size: 2rem;
-  line-height: 1.5;
+  color: black;
+  font-size: 2.5rem;
+  line-height: 2;
 }
 
 .icons i {
@@ -79,18 +78,69 @@ body,
 }
 
 .projects {
-  width: 70rem;
+  display: block;
   background-color: rgba(255, 255, 255);
   padding: 1rem;
-  font-size: 2rem;
-
+  font-size: 3rem;
+  line-height: 2;
+  justify-content: center;
 }
-
+ 
 .projects img {
+  
   width: 70rem;
+  border: 0.2rem;
+  border-color: black;
+  border-style: solid;
+}  
+
+.skills {
+  text-align: justify;
+  width: 30rem;
+  background-color: white;
+  padding: 1rem; 
+  font-size: 3rem;
 }
 
-@media screen and (max-width: 700px) {
+.signin {
+  display: flexbox;
+  padding: 5rem;
+  text-align: center;
+  background-color: white;
+}
+
+
+label {
+  display: block;
+  font-weight: 300;
+  margin-bottom: .25rem;
+}
+input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  color: #332a40;
+  border-radius: .5rem;
+  border: 1px solid #8c789b;
+  padding: .5rem;
+  margin-bottom: 1rem;
+  font-size: .8rem;
+}
+
+.admin{
+  padding: 5rem;
+  display: flex;
+  background-color: white;
+}
+
+.addProject {
+  margin-left: 2rem;
+  font-size: 1rem;
+  background-color:rgba(60, 39, 245, 0.712)
+}
+
+@media screen and (max-width: 800px) {
   .home {
     width: 50rem;
   }
@@ -98,7 +148,7 @@ body,
   .about-me{
     width: 50rem;
     font-size: 2rem;
-    line-height: 1.5;
+    line-height: 2;
     
   }
   .center-div {

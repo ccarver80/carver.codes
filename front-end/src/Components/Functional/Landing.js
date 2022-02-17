@@ -1,14 +1,13 @@
 import React, { Suspense } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import {
   OrbitControls,
   Stars,
   Html,
   ContactShadows,
   Billboard,
-  useTexture,
 } from "@react-three/drei";
-import Loading from "./Loading";
+import Loading from "../Supportive/Loading";
 
 //Textures for planets
 import gasy from "../Imgs/planetTexture/Gaseous1.png";
@@ -22,7 +21,7 @@ import venusmoon from "../Imgs/planetTexture/Venusian.png";
 import volcanicmoon from "../Imgs/planetTexture/Volcanic.png";
 
 //import plantet functions
-import { Sun, Moon, Planet } from "./Planets";
+import { Sun, Moon, Planet } from "../Supportive/Planets";
 
 const Landing = () => {
   return (

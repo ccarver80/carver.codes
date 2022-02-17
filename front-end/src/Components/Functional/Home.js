@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
 import { Stars, Html, OrbitControls, Billboard } from "@react-three/drei";
 
-import Loading from "./Loading";
+import Loading from "../Supportive/Loading";
 
 //Textures for planets
 import gasy from "../Imgs/planetTexture/Gaseous1.png";
@@ -13,7 +13,7 @@ import sunny from "../Imgs/planetTexture/sun.png";
 import habit from "../Imgs/planetTexture/Tropical.png";
 import blue from "../Imgs/planetTexture/blue.jpg";
 
-import { Sun, Planet } from "./Planets";
+import { Sun, Planet } from "../Supportive/Planets";
 
 
 
