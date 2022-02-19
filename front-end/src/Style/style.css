@@ -102,6 +102,24 @@ body,
   font-size: 3rem;
 }
 
+.blogList{
+  display: block;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5rem;
+  padding: 1rem; 
+}
+
+.blogPost {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+  font-size: 2rem;
+  line-height: 2;
+  justify-content: center;
+}
+
+
+/* =============BACK END ADMIN PAGE ========================= */
 .signin {
   display: flexbox;
   padding: 5rem;
@@ -127,11 +145,41 @@ input {
   margin-bottom: 1rem;
   font-size: .8rem;
 }
-
+/* =========Main Admin Page =========== */
 .admin{
   padding: 5rem;
-  display: flex;
+  display: block;
+  height: 80%;
   background-color: white;
+}
+
+.admin-buttons button{
+ margin: 2rem; 
+ padding: 1rem; 
+}
+/* ======Post Blog Page============ */
+.post-blog {
+  font-size: 5rem;
+  display: block;
+  padding: 5rem;
+  background-color: white;
+  height: 80%;
+  text-align: center;
+}
+
+.post-blog input {
+  font-size: 1rem;
+  width: 10rem;
+}
+
+.post-blog textarea {
+  display: inline;
+  height: 10rem;
+}
+
+.post-blog button {
+  display: block;
+  
 }
 
 .addProject {
@@ -155,6 +203,8 @@ input {
     line-height: normal;
     font-size: 1.5rem;
   }
+
+
 }
 
 @media screen and (max-width: 350px) {

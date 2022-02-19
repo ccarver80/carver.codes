@@ -1,24 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
+import {useNavigate} from 'react-router-dom'
 
 function PostBlog() {
-    return(
-        <div className="admin">
-            <form>
-                    <div className="main--flex">
-                        <div>
-                            <label htmlFor="title">Title</label>
-                            <input id="title" name="title" type="text" />
 
-                            <p></p>
+  const nav = useNavigate()
+  const [blog, setBlog] = useState();
 
-                            <label htmlFor="courseDescription">Course Description</label>
-                            <textarea id="courseDescription" name="courseDescription"></textarea>
-                        </div>
-                    </div>
-                    <button className="button" type="submit">Post Blog</button>
-                </form>
-        </div>
-    )
+  const createblog = async (e) => {
+    e.preventDefault();
+    await fetch("http://localhost:5000/api/blog/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(blog),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.message) {
+          console.log(data.message)
+        }else {
+          nav('/admin')
+        }
+      });
+  };
+
+  return (
+    <div className="post-blog">
+      <form onSubmit={createblog}>
+
+          
+            <label htmlFor="title">Title</label>
+            <input
+              id="title"
+              name="title"
+              type="text"
+              onChange={(e) => setBlog({ ...blog, title: e.target.value })} 
+            />
+
+            <p></p>
+
+            <label htmlFor="blogpost">Blog Post</label>
+            <textarea
+              id="blogpost"
+              name="blogpost"
+              onChange={(e) => setBlog({ ...blog, post: e.target.value })}
+            ></textarea>
+        
+       
+        <button type="submit">
+          Post Blog
+        </button>
+      </form>
+    </div>
+  );
 }
 
-export default PostBlog; 
+export default PostBlog;

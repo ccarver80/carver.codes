@@ -1,19 +1,12 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Canvas, } from "@react-three/fiber";
-import {
-  Billboard,
-  Html,
-  OrbitControls,
-  useTexture,
-} from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { Billboard, Html, OrbitControls, useTexture } from "@react-three/drei";
 
 import Loading from "../Supportive/Loading";
 import TimeofDay from "../Supportive/TImeofDay";
 
-import tropical  from "../Imgs/planetTexture/Tropical.png";
-
-
+import tropical from "../Imgs/planetTexture/Tropical.png";
 
 function Plane() {
   const Tropical = useTexture(tropical);
@@ -25,32 +18,56 @@ function Plane() {
   );
 }
 
-
 // =====CREATE A FETCH REQUEST TO SERVER TO GET TITLES OF ALL Blogs ====//
 
-
-
 const Blog = () => {
-  const nav = useNavigate()
+  const [blogPosts, setBlogPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchBlog = async () => {
+      await fetch("http://localhost:5000/api/blog")
+        .then((res) => res.json())
+        .then((data) => setBlogPosts(data));
+    };
+
+    fetchBlog();
+  }, []);
+
+  const nav = useNavigate();
   return (
     <Suspense fallback={<Loading />}>
       <Canvas camera={{ position: [20, 0, 0] }}>
         <ambientLight intensity={0.5} />
         <OrbitControls />
 
-        
-         {/* ====== Replace with componet that returns titles from fetch request */}
+        {/* ====== Replace with componet that returns titles from fetch request */}
         <Billboard position={[0, 0, 0]}>
-  <Html transform={true}>
-    <div className="blog">
-    <h1>This part is still under construction please check back later</h1>
-    <div><button onClick={()=> {
-                  nav('/landing')
-                }} className="enter-button">Back to space!</button></div>
-    </div>
-  </Html>
-</Billboard>
-      
+          <Html transform={true}>
+            <div className="blog">
+              {
+                 blogPosts.map((post) => (
+                   <div className="blogList">
+                    <a href={"/blog/" + post.id}>
+                      <h1>{post.title}</h1>
+                      </a>
+                      <h2>Posted: {post.createdAt}</h2>
+                    </div>
+                  ))
+                }
+              <div>
+                <button
+                  onClick={() => {
+                    nav("/landing");
+                  }}
+                  className="enter-button"
+                >
+                  Back to space!
+                </button>
+              </div>
+            </div>
+          </Html>
+        </Billboard>
+
         <Plane />
         <TimeofDay />
       </Canvas>

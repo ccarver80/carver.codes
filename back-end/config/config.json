@@ -1,8 +1,6 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
+    "storage": "carver_codes.db",
     "dialect": "sqlite"
   },
   "test": {
