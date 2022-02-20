@@ -27,6 +27,8 @@ router.post("/api/blog/", async (req, res) => {
   //==============GET ROUTE =================//
   router.get('/api/blog', async(req, res) => {
     try{
+
+      
       const blogPosts = await blog.findAll()
       res.status(200)
       res.json(blogPosts)
