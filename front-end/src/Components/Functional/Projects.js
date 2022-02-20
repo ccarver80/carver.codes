@@ -64,7 +64,6 @@ const Projects = () => {
                     <a href={"/project/" + project.id}>
                       <h1>{project.title}</h1>
                       </a>
-                      <h2>Posted: {project.createdAt}</h2>
                     </div>
                   ))
                 }

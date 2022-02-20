@@ -52,8 +52,11 @@ const ProjectDetail = () => {
           <Html transform={true}>
             <div className="projectPost">
               <h1>{project.title}</h1>
+              <h3>Description:</h3>
               <p>{project.desc}</p>
+              <h3>Tech used:</h3>
               <ReactMarkdown>{project.tech}</ReactMarkdown>
+              <h3>Links:</h3>
               <a href={"https://" + project.link1}>Live Demo</a>
               <a href={"https://" + project.link2}>Github Repo</a>
             </div>

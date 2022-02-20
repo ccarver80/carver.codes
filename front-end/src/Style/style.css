@@ -1,14 +1,11 @@
 
+
 /* Font from google fonts */
-@font-face {
-  font-family: Gideon;
-  src: url(./Fonts/Gideon_Roman/GideonRoman-Regular.ttf);
-}
 
 html,
 body,
 #root {
-  font-family: Gideon, "Courier New", Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -33,7 +30,7 @@ body,
   
   color: white;
   font-size: 8px;
-}
+}   
 
 /* Black text for earthy planet */
 .planetText-blog {
@@ -131,6 +128,18 @@ body,
   margin:1rem; 
 }
 
+.contact-form{
+  background-color: white;
+  font-size: 2rem;
+  padding: 2rem
+}
+
+.contact-form button{
+  font-size: 2rem;
+  margin-top: 1rem;
+  background-color: green;
+}
+
 
 /* =============BACK END ADMIN PAGE ========================= */
 .signin {
@@ -139,13 +148,17 @@ body,
   text-align: center;
   background-color: white;
 }
-
+form{
+  margin: 2rem;
+}
 
 label {
   display: block;
   font-weight: 300;
-  margin-bottom: .25rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
 }
+
 input {
   display: block;
   margin-left: auto;
@@ -156,49 +169,89 @@ input {
   border: 1px solid #8c789b;
   padding: .5rem;
   margin-bottom: 1rem;
-  font-size: .8rem;
+  font-size: 2rem;
 }
+textarea{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 30rem;
+  height: 20rem;
+  font-size: 2rem;
+}
+
+.tech {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 30rem;
+  height: 5rem;
+}
+
 /* =========Main Admin Page =========== */
 .admin{
   padding: 5rem;
-  display: block;
-  height: 80%;
   background-color: white;
+  height: 100%;
 }
 
 .admin-buttons button{
  margin: 2rem; 
  padding: 1rem; 
 }
-/* ======Post Blog Page============ */
-.post-blog {
-  font-size: 5rem;
-  display: block;
-  padding: 5rem;
-  background-color: white;
-  height: 80%;
-  text-align: center;
+
+.delete {
+  background-color: red;
+  color: white;
 }
 
-.post-blog input {
+.edit {
+  background-color: blue;
+  color: white;
+  margin-left: 1rem;
+}
+.col {
+  float: left;
+  margin: 5rem;
+  width: fit-content;
+}
+.List {
+  padding: 1rem;
   font-size: 1rem;
-  width: 10rem;
+  text-align: center;
+  border-radius: .5rem;
+  border: 2px solid black;
 }
 
-.post-blog textarea {
-  display: inline;
-  height: 10rem;
+.List h1{
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.post-blog button {
-  display: block;
-  
+
+/* ======Post Blog Page============ */
+.post-blog{
+  font-size: 2rem;
+  text-align: center;
+  background-color: white;
+  height: 100%;
 }
+
 
 .addProject {
   margin-left: 2rem;
   font-size: 1rem;
   background-color:rgba(60, 39, 245, 0.712)
+}
+
+/* ===============Mail DETAILED ============== */
+
+.mail-detail {
+  padding: 2rem;
+  font-size: 2rem;
+  background-color: white;
+  height: 100%;
+ text-align: center;
 }
 
 @media screen and (max-width: 800px) {

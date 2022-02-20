@@ -47,11 +47,11 @@ router.post("/api/blog/", async (req, res) => {
       const blogPost = await blog.findByPk(req.params.id)
 
       if (blogPost === null) {
-        res.status(404).res.json({
+        res.status(404).json({
             message: "This Blog dose not exist!"
         })
     }else {
-        res.status(200).res.json(blogPost);
+        res.status(200).json(blogPost);
     }
      
     }
@@ -60,6 +60,20 @@ router.post("/api/blog/", async (req, res) => {
         message: err
       });
 
+    }
+  })
+
+  router.delete('/api/blog/:id', async(req, res) => {
+    try{
+      const deleteBlog = await blog.findByPk(req.params.id)
+
+      deleteBlog.destroy()
+
+      res.status(204); 
+    }catch(err) {
+      res.json({
+        message: err
+      })
     }
   })
 

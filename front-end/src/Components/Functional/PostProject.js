@@ -27,6 +27,8 @@ function PostProject() {
 
   return (
     <div className="post-blog">
+   
+    
       <form onSubmit={createProject}>
         <label htmlFor="title">Title</label>
         <input
@@ -44,12 +46,12 @@ function PostProject() {
         ></textarea>
 
         <label htmlFor="tech">Tech. used</label>
-        <input
+        <textarea className="tech"
           id="tech"
           name="tech"
           type="tech"
           onChange={(e) => setProject({ ...project, tech: e.target.value })}
-        />
+        ></textarea>
 
         <label htmlFor="link1">Production Link</label>
         <input
@@ -69,6 +71,8 @@ function PostProject() {
 
         <button type="submit">Post Project</button>
       </form>
+   
+   
     </div>
   );
 }

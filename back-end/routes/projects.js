@@ -20,8 +20,8 @@ router.post("/api/projects", async (req, res) => {
 router.get("/api/projects", async (req, res) => {
   try {
     const projects = await Project.findAll();
-    res.json(projects);
-    res.status(200);
+    res.status(200).json(projects);
+    
   } catch (err) {
     res.json({
       message: err,
@@ -34,12 +34,12 @@ router.get("/api/projects/:id", async (req, res) => {
     const project = await Project.findByPk(req.params.id);
 
     if (project === null) {
-        res.status(404).res.json({
+        res.status(404).json({
             message: "This project dose not exist!"
         })
     }else {
-         res.status(200).res.json(project);
-      ;
+         res.status(200).json(project)
+      
     }
   } catch (err) {
     res.json({
@@ -47,5 +47,20 @@ router.get("/api/projects/:id", async (req, res) => {
     });
   }
 });
+
+router.delete('/api/projects/:id', async(req, res) => {
+  try{
+    const deleteProject = await Project.findByPk(req.params.id)
+
+    deleteProject.destroy()
+
+    res.status(204); 
+  }catch(err) {
+    res.json({
+      message: err
+    })
+  }
+})
+
 
 module.exports = router;
