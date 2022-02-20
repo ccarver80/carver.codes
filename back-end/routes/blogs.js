@@ -45,7 +45,15 @@ router.post("/api/blog/", async (req, res) => {
   router.get('/api/blog/:id', async(req, res) => {
     try{
       const blogPost = await blog.findByPk(req.params.id)
-      res.json(blogPost)
+
+      if (blogPost === null) {
+        res.status(404).res.json({
+            message: "This Blog dose not exist!"
+        })
+    }else {
+        res.status(200).res.json(blogPost);
+    }
+     
     }
     catch (err) {
       res.json({

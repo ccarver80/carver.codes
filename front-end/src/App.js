@@ -15,6 +15,7 @@ import SignIn from "./Components/Functional/SignIn";
 import ProtectedRoute from "./Components/Supportive/ProtectedRoute";
 import Admin from "./Components/Functional/Admin";
 import PostBlog from "./Components/Functional/PostBlog";
+import PostProject from './Components/Functional/PostProject'
 
 import NotFound from "./Components/Supportive/NotFound";
 
@@ -32,14 +33,22 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/sign-in" element={<SignIn />} />
+
+
         <Route element={<ProtectedRoute />}>
-          
+          {/* ENTER PROTECTED ROUTES HERE! */}
         </Route>
+
+
 <Route path="/admin" element={<Admin />} />
 <Route path='/admin/post-blog' element={<PostBlog />} />
+<Route path='/admin/post-project' element={<PostProject />} />
 
         <Route path="*" element={<NotFound />} />
+
       </Routes>
+
+
     </BrowserRouter>
   );
 }

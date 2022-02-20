@@ -19,7 +19,7 @@ app.set('port', port);
 (async() => {
   try {
 await sequelize.authenticate();
-console.log("Connection successful")
+console.log(`Connection successful on port:${port}`)
 
 
 }catch(err) {

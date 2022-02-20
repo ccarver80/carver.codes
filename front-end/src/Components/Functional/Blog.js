@@ -8,6 +8,9 @@ import TimeofDay from "../Supportive/TImeofDay";
 
 import tropical from "../Imgs/planetTexture/Tropical.png";
 
+import testingAPI from "../../api";
+import prodAPI  from "../../api"
+
 function Plane() {
   const Tropical = useTexture(tropical);
   return (
@@ -18,14 +21,12 @@ function Plane() {
   );
 }
 
-// =====CREATE A FETCH REQUEST TO SERVER TO GET TITLES OF ALL Blogs ====//
-
 const Blog = () => {
   const [blogPosts, setBlogPosts] = useState([]);
 
   useEffect(() => {
     const fetchBlog = async () => {
-      await fetch("http://localhost:5000/api/blog")
+      await fetch(testingAPI + "api/blog")
         .then((res) => res.json())
         .then((data) => setBlogPosts(data));
     };
@@ -50,7 +51,6 @@ const Blog = () => {
                     <a href={"/blog/" + post.id}>
                       <h1>{post.title}</h1>
                       </a>
-                      <h2>Posted: {post.createdAt}</h2>
                     </div>
                   ))
                 }

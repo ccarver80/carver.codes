@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import {useNavigate} from 'react-router-dom'
+import testingAPI from "../../api";
+
 
 function PostBlog() {
 
@@ -8,7 +10,7 @@ function PostBlog() {
 
   const createblog = async (e) => {
     e.preventDefault();
-    await fetch("http://localhost:5000/api/blog/", {
+    await fetch(testingAPI + "api/blog", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

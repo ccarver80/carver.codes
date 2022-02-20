@@ -61,12 +61,12 @@ const AboutMe = () => {
                 </p>
                 <div className="icons">
                 <h3>Connect with me!</h3>
-                  <a href="https://www.linkedin.com/in/christopher-carver-5366871bb/" target='_blank' rel="noopener noreferrer nofollow" ><i className="fab fa-linkedin-in fa-2x"></i></a> 
-                  <a href="https://github.com/ccarver80" target='_blank' rel="noopener noreferrer nofollow" ><i className="fab fa-github fa-2x"></i></a>
-                  <a href="mailto:ckc_80@outlook.com"><i className="fa-solid fa-envelope fa-2x"></i></a>
-                  <a href="https://twitter.com/codingCarver" target="_blank" rel="noopener noreferrer nofollow" ><i className="fa-brands fa-twitter fa-2x"></i></a>
-                  <a href="https://www.instagram.com/codingcarver/" target="_blank" rel="noopener noreferrer nofollow" ><i className="fa-brands fa-instagram fa-2x"></i></a>
-                  <a href="https://www.tiktok.com/@codingcarver" target="_blank" rel="noopener noreferrer nofollow" ><i class="fa-brands fa-tiktok fa-2x"></i></a>
+                  <a href="https://www.linkedin.com/in/christopher-carver-5366871bb/" target='_blank' rel="noopener noreferrer nofollow" >LinkedIn</a> 
+                  <a href="https://github.com/ccarver80" target='_blank' rel="noopener noreferrer nofollow" >GitHub</a>
+                  <a href="mailto:ckc_80@outlook.com">Email</a>
+                  <a href="https://twitter.com/codingCarver" target="_blank" rel="noopener noreferrer nofollow" >Twitter</a>
+                  <a href="https://www.instagram.com/codingcarver/" target="_blank" rel="noopener noreferrer nofollow" >Instagram</a>
+                  <a href="https://www.tiktok.com/@codingcarver" target="_blank" rel="noopener noreferrer nofollow" >TikTok</a>
                 </div>
                 <div><button onClick={()=> {
                   nav('/landing')

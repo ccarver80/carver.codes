@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState, useEffect,} from "react";
 import {useNavigate} from 'react-router-dom'
 import { Canvas, } from "@react-three/fiber";
 import {
@@ -12,6 +12,8 @@ import Loading from "../Supportive/Loading";
 import TimeofDay from "../Supportive/TImeofDay";
 
 import mars from "../Imgs/planetTexture/Martian.png";
+
+import testingAPI from "../../api";
 
 
 function Plane() {
@@ -30,6 +32,20 @@ function Plane() {
 
 
 const Projects = () => {
+
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      await fetch(testingAPI + "api/projects")
+        .then((res) => res.json())
+        .then((data) => setProjects(data));
+    };
+
+    fetchProjects();
+  }, []);
+
+
   const nav = useNavigate()
   return (
     <Suspense fallback={<Loading />}>
@@ -42,7 +58,16 @@ const Projects = () => {
         <Billboard position={[0, 0, 0]}>
   <Html transform={true}>
     <div className="projects">
-     <h1>This part is still under construction please check back later</h1>
+    {
+                 projects.map((project) => (
+                   <div className="blogList">
+                    <a href={"/project/" + project.id}>
+                      <h1>{project.title}</h1>
+                      </a>
+                      <h2>Posted: {project.createdAt}</h2>
+                    </div>
+                  ))
+                }
       {/* Button back to space */}
        <div><button onClick={()=> {
                   nav('/landing')

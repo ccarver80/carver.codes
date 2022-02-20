@@ -13,6 +13,7 @@ import TimeofDay from "../Supportive/TImeofDay";
 
 import tropical from "../Imgs/planetTexture/Tropical.png";
 import { useNavigate, useParams } from "react-router-dom";
+import testingAPI from "../../api";
 
 
 function Plane() {
@@ -38,9 +39,15 @@ function Plane() {
 
   useEffect(() => {
     const fetchBlog = async() => {
-      await fetch('http://localhost:5000/api/blog/' + params.id)
+      await fetch(testingAPI + 'api/blog/' + params.id)
       .then((res) => res.json())
-      .then((data) => setBlogPost(data))
+      .then((data) => {
+        if (data.message){
+          nav('/*')  // NAVIGATE TO SORRY NOT FOUND PAGE
+        }else {
+            setBlogPost(data)
+        }
+      })
     }
     fetchBlog()
     console.log(blogPost)
