@@ -1,37 +1,285 @@
-body {
-   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; 
-   font-size: x-large;
-   background-color: black;
-   
-} 
+
+
+/* Font from google fonts */
+
+html,
+body,
+#root {
+  font-family: "Courier New", Courier, monospace;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  padding: 0;
+  background-color: black;
+}
 
 .center-div {
-   margin-left: 5rem;
-   margin-right: 5rem; 
-   margin-top: 5rem;
-   display: flex;
-   justify-content: center;
-   padding: 2rem;
-   background-color: rgba(0, 0, 0, .5);
-   color: white;
-   
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
 }
 
-.center-text {
-   display: block;
-   text-align: center;
+/* Text for rest of the planets */
+.planetText {
+  
+  color: white;
+  font-size: 8px;
+}   
+
+/* Black text for earthy planet */
+.planetText-blog {
+  color: black;
+  font-size: 10px;
 }
 
-.card {
-   border-radius: 10%;
-   padding: 1rem;
-   margin: 1rem;
-   display: inline-flex;
-   text-align: center;
-   font-size: 1rem;
-   
+.home {
+  border-radius: 5%;
+  background-color: white;
+  text-align: center;
+  color: black;
+  font-size: 2rem;
+  padding: 1rem;
 }
 
-.icons i {
-   padding: 1rem;
+.enter-button {
+  background-color: red;
+  padding: 1rem;
+  color: white;
+  font-size: 2rem;
+}
+.move-around {
+  font-size: 1rem;
+
+  color: white;
+}
+.not-found {
+  color: white;
+}
+
+.about-me {
+  padding: 1rem;
+  text-align: justify;
+  color: black;
+  font-size: 2.5rem;
+  line-height: 2;
+}
+
+.icons a {
+  padding-left: 2rem;
+}
+
+.projects {
+  display: block;
+  background-color: rgba(255, 255, 255);
+  padding: 1rem;
+  font-size: 3rem;
+  line-height: 2;
+  justify-content: center;
+}
+ 
+.projects img {
+  
+  width: 70rem;
+  border: 0.2rem;
+  border-color: black;
+  border-style: solid;
+}  
+
+.skills {
+  text-align: justify;
+  width: 30rem;
+  background-color: white;
+  padding: 1rem; 
+  font-size: 3rem;
+}
+
+.blogList{
+  display: block;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5rem;
+  padding: 1rem; 
+}
+
+.blogPost {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+  font-size: 2rem;
+  line-height: 2;
+  justify-content: center;
+}
+
+.projectPost {
+  display: block;
+  background-color: rgb(255, 255, 255);
+  padding: 2rem;
+  margin: 2rem;
+  font-size: 2rem;
+  line-height: 2;
+  justify-content: center;
+}
+
+.projectPost a{
+  margin:1rem; 
+}
+
+.contact-form{
+  background-color: white;
+  font-size: 2rem;
+  padding: 2rem
+}
+
+.contact-form button{
+  font-size: 2rem;
+  margin-top: 1rem;
+  background-color: green;
+}
+
+
+/* =============BACK END ADMIN PAGE ========================= */
+.signin {
+  display: flexbox;
+  padding: 5rem;
+  text-align: center;
+  background-color: white;
+}
+form{
+  margin: 2rem;
+}
+
+label {
+  display: block;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  color: #332a40;
+  border-radius: .5rem;
+  border: 1px solid #8c789b;
+  padding: .5rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+textarea{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 30rem;
+  height: 20rem;
+  font-size: 2rem;
+}
+
+.tech {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 30rem;
+  height: 5rem;
+}
+
+/* =========Main Admin Page =========== */
+.admin{
+  padding: 5rem;
+  background-color: white;
+  height: 100%;
+}
+
+.admin-buttons button{
+ margin: 2rem; 
+ padding: 1rem; 
+}
+
+.delete {
+  background-color: red;
+  color: white;
+}
+
+.edit {
+  background-color: blue;
+  color: white;
+  margin-left: 1rem;
+}
+.col {
+  float: left;
+  margin: 5rem;
+  width: fit-content;
+}
+.List {
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: .5rem;
+  border: 2px solid black;
+}
+
+.List h1{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
+/* ======Post Blog Page============ */
+.post-blog{
+  font-size: 2rem;
+  text-align: center;
+  background-color: white;
+  height: 100%;
+}
+
+
+.addProject {
+  margin-left: 2rem;
+  font-size: 1rem;
+  background-color:rgba(60, 39, 245, 0.712)
+}
+
+/* ===============Mail DETAILED ============== */
+
+.mail-detail {
+  padding: 2rem;
+  font-size: 2rem;
+  background-color: white;
+  height: 100%;
+ text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  .home {
+    width: 50rem;
+  }
+
+  .about-me{
+    width: 50rem;
+    font-size: 2rem;
+    line-height: 2;
+    
+  }
+  .center-div {
+    line-height: normal;
+    font-size: 1.5rem;
+  }
+
+
+}
+
+@media screen and (max-width: 350px) {
+  .home {
+    width: 30rem;
+  }
+
+  .center-div {
+    font-size: 1rem;
+  }
 }
