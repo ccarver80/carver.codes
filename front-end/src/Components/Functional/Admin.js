@@ -61,7 +61,11 @@ function Admin() {
             </a>
             <button
               className="delete"
-              onClick={() => Delete("projects", project.id)}
+              onClick={() => {
+                Delete("projects", project.id)
+                
+                }
+                }
             >
               Delete?
             </button>

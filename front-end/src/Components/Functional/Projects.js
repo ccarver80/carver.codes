@@ -58,6 +58,7 @@ const Projects = () => {
         <Billboard position={[0, 0, 0]}>
   <Html transform={true}>
     <div className="projects">
+    <h3>Click on a project to learn more!</h3>
     {
                  projects.map((project) => (
                    <div className="blogList">

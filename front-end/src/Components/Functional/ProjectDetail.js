@@ -45,7 +45,7 @@ const ProjectDetail = () => {
   const nav = useNavigate();
   return (
     <Suspense fallback={<Loading />}>
-      <Canvas camera={{ position: [20, 0, 0] }}>
+      <Canvas camera={{ position: [30, 0, 0] }}>
         <ambientLight intensity={0.5} />
         <OrbitControls />
         <Billboard>
