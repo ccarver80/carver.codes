@@ -35,6 +35,18 @@ const Home = () => {
         <Planet planetOrbit={true} dist={30} speed={3} texture={habit} pos={[-30, 0, -10]} scale={3} spin={2} />
         <Planet planetOrbit={true} dist={50} speed={4} texture={earthy} pos={[20, 0, -30]} scale={3} spin={3} />
         <Billboard position={[-4, 13, 170]}>
+          <Html transform={true} position={[0, 30, 0]}>
+          <div className="mobile home">
+              <h1 style={{color: 'red'}}>This site works better on desktop!</h1>
+              </div>
+          </Html> <Html transform={true} position={[0, 20, 0]}><button
+                  className="enter-button"
+                  onClick={() => {
+                    nav("/landing");
+                  }}
+                >
+                  Fly to my solar system!
+                </button></Html>
           <Html transform={true}>
             
               <div className="home">
@@ -43,15 +55,16 @@ const Home = () => {
                   I'm Chris Carver, and I built this site using React, Three.js
                   React-Three/Fiber, and Drei
                 </h2>
-                <p>Find my social links in my About Me planet!</p>
-                <button
-                  className="enter-button"
-                  onClick={() => {
-                    nav("/landing");
-                  }}
-                >
-                  Fly to my solar system!
-                </button>
+                <div className="icons">
+                <h3>Connect with me!</h3>
+                  <a href="https://www.linkedin.com/in/christopher-carver-5366871bb/" target='_blank' rel="noopener noreferrer nofollow" ><i class="fa-brands fa-linkedin fa-2xl"></i></a> 
+                  <a href="https://github.com/ccarver80" target='_blank' rel="noopener noreferrer nofollow" ><i class="fa-brands fa-github fa-2xl"></i></a>
+                  <a href="mailto:ckc_80@outlook.com"><i class="fa-solid fa-envelope fa-2xl"></i></a>
+                  <a href="https://twitter.com/codingCarver" target="_blank" rel="noopener noreferrer nofollow" ><i class="fa-brands fa-twitter fa-2xl"></i></a>
+                  <a href="https://www.instagram.com/codingcarver/" target="_blank" rel="noopener noreferrer nofollow" ><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                  <a href="https://www.tiktok.com/@codingcarver" target="_blank" rel="noopener noreferrer nofollow" ><i class="fa-brands fa-tiktok fa-2xl"></i></a>
+                </div>
+               
             </div>
           </Html>
         </Billboard>

@@ -63,6 +63,7 @@ function Plane() {
           <Html transform={true}>
           <div className="blogPost">
             <h1>{blogPost.title}</h1>
+            <h2>Posted: {blogPost.createdAt}</h2>
             <p>{blogPost.post}</p>
             
             <button

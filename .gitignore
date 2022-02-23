@@ -1,4 +1,4 @@
 # Local Netlify folder
 .netlify
 ./back-end/node_modules
-./src/api.js
+./src/api.js 
