@@ -5,6 +5,8 @@ import {
   Billboard,
   Html,
   OrbitControls,
+  Scroll,
+  ScrollControls,
   useTexture,
 } from "@react-three/drei";
 
@@ -36,7 +38,8 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    const fetchProjects = async () => {
+
+    const fetchProjects = async () => { 
       await fetch(testingAPI + "api/projects")
         .then((res) => res.json())
         .then((data) => setProjects(data));
@@ -49,17 +52,15 @@ const Projects = () => {
   const nav = useNavigate()
   return (
     <Suspense fallback={<Loading />}>
-      <Canvas camera={{ position: [40, 0, 0] }}>
+      <Canvas camera={{ position: [30, 0, 0] }}>
         <ambientLight intensity={0.5} />
-        <OrbitControls />
 
         
-         {/* ====== Replace with componet that returns titles from fetch request */}
         <Billboard position={[0, 0, 0]}>
-  <Html transform={true}>
+  <ScrollControls pages={2}><Scroll><Html transform={true}>
     <div className="projects">
     <h3>Click on a project to learn more!</h3>
-    {
+    {projects ?
                  projects.map((project) => (
                    <div className="blogList">
                     <a href={"/project/" + project.id}>
@@ -67,6 +68,7 @@ const Projects = () => {
                       </a>
                     </div>
                   ))
+                  : <h1>Loading projects....</h1>
                 }
       {/* Button back to space */}
        <div><button onClick={()=> {
@@ -74,7 +76,7 @@ const Projects = () => {
                 }} className="enter-button">Back to space!</button></div>
     </div>
    
-  </Html>
+  </Html></Scroll></ScrollControls>
 </Billboard>
       
         <Plane />

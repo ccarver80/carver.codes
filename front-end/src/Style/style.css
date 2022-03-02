@@ -76,14 +76,6 @@ body,
   
 }
 
-.desktop {
-  height: 100%;
-}
-
-.mobile {
-  display: none;
-}
-
 .icons i {
   margin-right: 2rem;
   margin-bottom: 2rem;
@@ -265,23 +257,17 @@ textarea{
 
 @media screen and (max-width: 800px) {
   .home {
-    
     width: 70rem;
   }
 
   .about-me{
+    margin-top: 20rem; 
+    width: 50rem;
     text-align: center;
-    background-color: white;
-    font-size: 2rem;
+    font-size: 3rem;
     line-height: 1;
   }
-  .desktop{
-    display: none;
-  }
-
-  .mobile{
-    display: block;
-  }
+ 
   .icons a {
     padding-left: .5rem;
     
@@ -292,15 +278,20 @@ textarea{
   }
 
   .projectPost {
+    margin-top: 10rem;
     width: 50rem;
     display: block;
     background-color: rgb(255, 255, 255);
     padding: 2rem;
-    margin: 2rem;
     font-size: 2rem;
     line-height: 2;
     justify-content: center;
   }
+
+  .blogPost{
+    margin-top: 20rem;
+  }
+
 
   .center-div {
     line-height: normal;
@@ -324,11 +315,11 @@ textarea{
   }
 
   .projectPost {
+    margin-top: 10rem;
     width: 30rem;
     display: block;
     background-color: rgb(255, 255, 255);
     padding: 2rem;
-    margin: 2rem;
     font-size: 2rem;
     line-height: 2;
     justify-content: center;
@@ -343,3 +334,4 @@ textarea{
     width: 30rem;
   }
 }
+

@@ -35,17 +35,13 @@ const Home = () => {
         <Planet planetOrbit={true} dist={30} speed={3} texture={habit} pos={[-30, 0, -10]} scale={3} spin={2} />
         <Planet planetOrbit={true} dist={50} speed={4} texture={earthy} pos={[20, 0, -30]} scale={3} spin={3} />
         <Billboard position={[-4, 13, 170]}>
-          <Html transform={true} position={[0, 30, 0]}>
-          <div className="mobile home">
-              <h1 style={{color: 'red'}}>This site works better on desktop!</h1>
-              </div>
-          </Html> <Html transform={true} position={[0, 20, 0]}><button
+           <Html transform={true} position={[0, 20, 0]}><button
                   className="enter-button"
                   onClick={() => {
                     nav("/landing");
                   }}
                 >
-                  Fly to my solar system!
+                  CLICK HERE to fly to my solar system!
                 </button></Html>
           <Html transform={true}>
             

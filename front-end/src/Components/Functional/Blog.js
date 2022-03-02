@@ -50,6 +50,7 @@ const Blog = () => {
                    <div className="blogList">
                     <a href={"/blog/" + post.id}>
                       <h1>{post.title}</h1>
+                      <h2>{post.createdAt}</h2>
                       </a>
                     </div>
                   ))
