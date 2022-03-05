@@ -122,7 +122,7 @@ const Landing = () => {
           <Html transform={true}>
             <div className="move-around">
               <h1>
-                Move around and click on planets using your finger or mouse!
+               Move around using your finger or mouse and click on the planets.
               </h1>
             </div>
           </Html>

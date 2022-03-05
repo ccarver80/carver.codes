@@ -42,13 +42,15 @@ function App() {
 
         <Route element={<ProtectedRoute />}>
           {/* ENTER PROTECTED ROUTES HERE! */}
-        </Route>
 
-
-<Route path="/admin" element={<Admin />} />
+          <Route path="/admin" element={<Admin />} />
 <Route path='/admin/post-blog' element={<PostBlog />} />
 <Route path='/admin/post-project' element={<PostProject />} />
 <Route path='/admin/mail/:id' element={<MailDetail />} />
+        </Route>
+
+
+
 
         <Route path="*" element={<NotFound />} />
 
