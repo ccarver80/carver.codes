@@ -46,62 +46,15 @@ const AboutMe = () => {
                       Self taught and HIGHLY motivated, full stack JavaScript
                       developer looking for a career change. Growing up in the
                       oil industry I have understand the value of hard work and
-                      determination. I began my journey in October 2020 with
-                      "Python For Everybody" on Coursera. This is where I
-                      was introduced to the fundamentals of programming. After that I
-                      expanded my knowlege HTML and CSS and eventually found Team
-                      Treehouse where I began my quest to complete the Full Stack JavaScript Tech
-                      Degree which includeds React, Node, Express, API's and so much
-                      more. I Finished the Tech Degree in February 2022. All 10
-                      projects from the Tech Degree can be found on my GitHub
-                      account <a href="https://github.com/ccarver80/Tech-Degree-Projects">here.</a>
+                      determination. I began my journey in October 2020 learning the basics of programming
+                      and every day growing to become a software engineer.
+                      A list of my projects I have built so far can be found <a href="https://github.com/ccarver80/Tech-Degree-Projects">here.</a>
                     </p>
 
-                    <div className="icons">
-                      <h3>Connect with me!</h3>
-                      <a
-                        href="https://www.linkedin.com/in/christopher-carver-5366871bb/"
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                      >
-                        <i class="fa-brands fa-linkedin fa-2xl"></i>
-                      </a>
-                      <a
-                        href="https://github.com/ccarver80"
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                      >
-                        <i class="fa-brands fa-github fa-2xl"></i>
-                      </a>
-                      <a href="mailto:ckc_80@outlook.com">
-                        <i class="fa-solid fa-envelope fa-2xl"></i>
-                      </a>
-                      <a
-                        href="https://twitter.com/codingCarver"
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                      >
-                        <i class="fa-brands fa-twitter fa-2xl"></i>
-                      </a>
-                      <a
-                        href="https://www.instagram.com/codingcarver/"
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                      >
-                        <i class="fa-brands fa-instagram fa-2xl"></i>
-                      </a>
-                      <a
-                        href="https://www.tiktok.com/@codingcarver"
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
-                      >
-                        <i class="fa-brands fa-tiktok fa-2xl"></i>
-                      </a>
-                    </div>
-
+                   
                     <button
                       onClick={() => {
-                        nav("/landing");
+                        nav("/");
                       }}
                       className="enter-button"
                     >

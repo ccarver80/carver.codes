@@ -70,7 +70,7 @@ const BlogDetail = () => {
                   </button>
                   <button
                     onClick={() => {
-                      nav("/landing");
+                      nav("/");
                     }}
                     className="enter-button"
                   >

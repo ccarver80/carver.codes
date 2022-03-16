@@ -87,7 +87,7 @@ function ContactMe()  {
         <button type="submit">Send Message</button>
       </form></div>
                     <div><button onClick={()=> {
-                  nav('/landing')
+                  nav('/')
                 }} className="enter-button">Back to space!</button></div>
                 
             </Html>

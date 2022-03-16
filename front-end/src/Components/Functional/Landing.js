@@ -1,4 +1,5 @@
 import React, { Suspense } from "react";
+import {Link} from 'react-router-dom';
 import { Canvas } from "@react-three/fiber";
 import {
   OrbitControls,
@@ -25,8 +26,31 @@ import { Sun, Moon, Planet } from "../Supportive/Planets";
 
 const Landing = () => {
   return (
-    <Suspense fallback={<Loading />}>
-      <Canvas camera={{ position: [-30, 10, 140] }}>
+   
+    <Suspense fallback={<Loading />}> 
+    <div className="header">
+    
+               <h3>Connect with me!</h3>
+               <div className="icons">
+                  <a href="https://www.linkedin.com/in/christopher-carver-5366871bb/" target='_blank' rel="noopener noreferrer nofollow" ><i class="fa-brands fa-linkedin fa-2xl"></i></a> 
+                  <a href="https://github.com/ccarver80" target='_blank' rel="noopener noreferrer nofollow" ><i class="fa-brands fa-github fa-2xl"></i></a>
+                  <a href="mailto:ckc_80@outlook.com"><i class="fa-solid fa-envelope fa-2xl"></i></a>
+                  <a href="https://twitter.com/codingCarver" target="_blank" rel="noopener noreferrer nofollow" ><i class="fa-brands fa-twitter fa-2xl"></i></a>
+                  <a href="https://www.instagram.com/codingcarver/" target="_blank" rel="noopener noreferrer nofollow" ><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                  <a href="https://www.tiktok.com/@codingcarver" target="_blank" rel="noopener noreferrer nofollow" ><i class="fa-brands fa-tiktok fa-2xl"></i></a>
+                </div>
+
+                <nav className="navigation">
+                  <Link to="/about" className="link">About</Link>
+                  <Link to="/projects" className="link">Projects</Link>
+                  <Link to="/contact-me" className="link">Contact</Link>
+                  <Link to="/skills" className="link">Skills</Link>
+                  <Link to="/blog" className="link">Blog</Link>
+                  
+                </nav>
+          
+    </div>
+      <Canvas camera={{ position: [-120, 10, 90] }}>
         <ambientLight intensity={0.8} />
 
         {/* Adds spotlights all around sun making it super bright looking */}
@@ -117,13 +141,20 @@ const Landing = () => {
           spin={5}
         />
         <Stars radius={100} count={10000} />
-
-        <Billboard position={[-25, -3, 120]}>
+       
+        <Billboard position={[-95, -3, 70]}>
+        
           <Html transform={true}>
-            <div className="move-around">
-              <h1>
-               Move around using your finger or mouse and click on the planets.
-              </h1>
+            
+              <div className="home">
+                <h1>Welcome to my corner of the universe!</h1>
+                <h2>
+                  I'm Chris Carver, and I built this site using React, Three.js,
+                  React-Three/Fiber, and Drei
+                </h2>
+                
+               <h3 style={{color: 'red'}}>Click and drag to move around and click on the planets to visit that section</h3>
+               
             </div>
           </Html>
         </Billboard>

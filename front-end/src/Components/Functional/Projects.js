@@ -57,7 +57,7 @@ const Projects = () => {
 
         
         <Billboard position={[0, 0, 0]}>
-  <ScrollControls pages={2}><Scroll><Html transform={true}>
+  <Html transform={true}>
     <div className="projects">
     <h3>Click on a project to learn more!</h3>
     {projects ?
@@ -72,11 +72,11 @@ const Projects = () => {
                 }
       {/* Button back to space */}
        <div><button onClick={()=> {
-                  nav('/landing')
+                  nav('/')
                 }} className="enter-button">Back to space!</button></div>
     </div>
    
-  </Html></Scroll></ScrollControls>
+  </Html>
 </Billboard>
       
         <Plane />

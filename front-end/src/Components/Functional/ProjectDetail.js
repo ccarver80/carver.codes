@@ -71,7 +71,7 @@ const ProjectDetail = () => {
                 <div>
                   <button
                     onClick={() => {
-                      nav("/landing");
+                      nav("/");
                     }}
                     className="enter-button"
                   >

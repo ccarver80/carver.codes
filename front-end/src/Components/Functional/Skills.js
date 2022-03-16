@@ -50,7 +50,7 @@ function Skills() {
               <div>
                 <button
                   onClick={() => {
-                    nav("/landing");
+                    nav("/");
                   }}
                   className="enter-button"
                 >
