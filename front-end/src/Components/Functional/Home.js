@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
 import { Stars, Html, OrbitControls, Billboard } from "@react-three/drei";
+import '../../Style/style.css'
 
 import Loading from "../Supportive/Loading";
 
@@ -23,7 +24,8 @@ const Home = () => {
 
   return (
     <Suspense fallback={<Loading />}>
-      <Canvas camera={{ position: [-5, 34, 200] }}>
+    <div className="home">
+      <Canvas  camera={{ position: [-5, 34, 200] }}>
         <Sun texture={sunny} scale={5} />
         <spotLight intensity={8} position={[0, 0, 40]} />
         <ambientLight intensity={0.8} />
@@ -64,7 +66,7 @@ const Home = () => {
             </div>
           </Html>
         </Billboard>
-      </Canvas>
+      </Canvas></div>
     </Suspense>
   );
 };

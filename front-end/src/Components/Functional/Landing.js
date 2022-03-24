@@ -9,6 +9,7 @@ import {
   Billboard,
 } from "@react-three/drei";
 import Loading from "../Supportive/Loading";
+import '../../Style/style.css'
 
 //Textures for planets
 import gasy from "../Imgs/planetTexture/Gaseous1.png";
@@ -26,30 +27,38 @@ import { Sun, Moon, Planet } from "../Supportive/Planets";
 
 const Landing = () => {
   return (
-   
+  
     <Suspense fallback={<Loading />}> 
-    <div className="header">
+    <div className="flex flex-row  p-4">
     
-               <h3>Connect with me!</h3>
-               <div className="icons">
+               <div className=" flex w-[700px] justify-between mx-auto mb-5">
+                <h3 className="sm:text-2xl">Connect with me!</h3>
+                  
                   <a href="https://www.linkedin.com/in/christopher-carver-5366871bb/" target='_blank' rel="noopener noreferrer nofollow" ><i class="fa-brands fa-linkedin fa-2xl"></i></a> 
                   <a href="https://github.com/ccarver80" target='_blank' rel="noopener noreferrer nofollow" ><i class="fa-brands fa-github fa-2xl"></i></a>
                   <a href="mailto:ckc_80@outlook.com"><i class="fa-solid fa-envelope fa-2xl"></i></a>
                   <a href="https://twitter.com/codingCarver" target="_blank" rel="noopener noreferrer nofollow" ><i class="fa-brands fa-twitter fa-2xl"></i></a>
                   <a href="https://www.instagram.com/codingcarver/" target="_blank" rel="noopener noreferrer nofollow" ><i class="fa-brands fa-instagram fa-2xl"></i></a>
                   <a href="https://www.tiktok.com/@codingcarver" target="_blank" rel="noopener noreferrer nofollow" ><i class="fa-brands fa-tiktok fa-2xl"></i></a>
-                </div>
+                  </div>
+                  </div>
 
-                <nav className="navigation">
+                
+                 
+                <nav className="flex sm:text-4xl mb-5 justify-evenly">
                   <Link to="/about" className="link">About</Link>
                   <Link to="/projects" className="link">Projects</Link>
                   <Link to="/contact-me" className="link">Contact</Link>
                   <Link to="/skills" className="link">Skills</Link>
                   <Link to="/blog" className="link">Blog</Link>
                   
-                </nav>
-          
-    </div>
+                </nav> 
+        
+    
+
+    
+
+     <div className="bg-black w-screen h-screen">
       <Canvas camera={{ position: [-120, 10, 90] }}>
         <ambientLight intensity={0.8} />
 
@@ -64,7 +73,7 @@ const Landing = () => {
         <OrbitControls enableZoom={false} />
         <Planet
           texture={gasy}
-          planetText="planetText"
+          planetText="text-sm text-white"
           location="/about"
           pos={[-5, 0, 100]}
           scale={10}
@@ -73,7 +82,7 @@ const Landing = () => {
         />
         <Planet
           texture={blue}
-          planetText="planetText"
+          planetText="text-xs text-white"
           location="/skills"
           pos={[5, 0, -75]}
           scale={5}
@@ -82,7 +91,7 @@ const Landing = () => {
         />
         <Planet
           texture={martian}
-          planetText="planetText"
+          planetText="text-xs text-white"
           location="/projects"
           pos={[90, 0, 50]}
           scale={6}
@@ -91,16 +100,16 @@ const Landing = () => {
         />
         <Planet
           texture={habit}
-          planetText="planetText-blog"
+          planetText="text-lg"
           location="/blog"
           pos={[-60, 0, -10]}
-          scale={5}
+          scale={7}
           text="Blog"
           spin={2}
         />
         <Planet
           texture={earthy}
-          planetText="planetText"
+          planetText="text-xs bg-white rounded-xl"
           location="/contact-me"
           pos={[50, 0, -30]}
           scale={8}
@@ -146,19 +155,19 @@ const Landing = () => {
         
           <Html transform={true}>
             
-              <div className="home">
-                <h1>Welcome to my corner of the universe!</h1>
-                <h2>
+              <div className="bg-white flex flex-col w-fit p-10 rounded-2xl ">
+                <h1 className="mx-auto my-4 text-7xl">Welcome to my corner of the universe!</h1>
+                <h2 className="mx-auto my-4 text-5xl">
                   I'm Chris Carver, and I built this site using React, Three.js,
                   React-Three/Fiber, and Drei
                 </h2>
                 
-               <h3 style={{color: 'red'}}>Click and drag to move around and click on the planets to visit that section</h3>
+               <h3 className="mx-auto my-4 text-5xl text-red-700">Click and drag to move around and click on the planets to visit that section</h3>
                
             </div>
           </Html>
         </Billboard>
-      </Canvas>
+      </Canvas></div>
     </Suspense>
   );
 };

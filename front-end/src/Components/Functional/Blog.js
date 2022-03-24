@@ -37,13 +37,7 @@ const Blog = () => {
   const nav = useNavigate();
   return (
     <Suspense fallback={<Loading />}>
-      <Canvas camera={{ position: [20, 0, 0] }}>
-        <ambientLight intensity={0.5} />
-        <OrbitControls />
-
-        {/* ====== Replace with componet that returns titles from fetch request */}
-        <Billboard position={[0, 0, 0]}>
-          <Html transform={true}>
+      
             <div className="blog">
               {
                  blogPosts.map((post) => (
@@ -66,12 +60,7 @@ const Blog = () => {
                 </button>
               </div>
             </div>
-          </Html>
-        </Billboard>
-
-        <Plane />
-        <TimeofDay />
-      </Canvas>
+        
     </Suspense>
   );
 };
