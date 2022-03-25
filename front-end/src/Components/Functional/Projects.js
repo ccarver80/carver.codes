@@ -57,45 +57,35 @@ const Projects = () => {
 
   const nav = useNavigate();
   return (
-    <Suspense fallback={<Loading />}>
-      <Canvas camera={{ position: [30, 0, 0] }}>
-        <ambientLight intensity={0.5} />
 
-        <Billboard position={[0, 0, 0]}>
-          <Html transform={true}>
-            <div className="projects">
-              <h3>Click on a project to learn more!</h3>
-              {projects.map((project) => (
-                <div className="blogList">
-                  <a href={"/project/" + project.id}>
-                    <h1>{project.title}</h1>
-                  </a>
-                  <p>{project.desc}</p>
-                </div>
-              ))}
-              <h3>Page:</h3>
-              {pageNumbers.map((page) => (
-                <button  className="pageNumber">{page}</button>
-              ))}
-              {/* Button back to space */}
-              <div>
-                <button
-                  onClick={() => {
-                    nav("/");
-                  }}
-                  className="enter-button"
-                >
-                  Back to space!
-                </button>
-              </div>
-            </div>
-          </Html>
-        </Billboard>
+    <div className="flex bg-blue-400 flex-col sm:h-screen ">
+      <div className="flex shadow-2xl shadow-black rounded-2xl mt-10 w-2/4 bg-lime-100 mx-auto sm:h-36 h-24 sm:text-5xl text-3xl">
+        <h1 className=" text-black mx-auto my-auto">Projects</h1>
+      </div>
 
-        <Plane />
-        <TimeofDay />
-      </Canvas>
-    </Suspense>
+     
+
+      <div className="flex flex-col justify-between mx-5 sm:h-screen  p-5 shadow-black shadow-2xl rounded-2xl mt-10 bg-lime-100">
+
+        <h3 className="text-3xl mx-auto">Click on a project to learn more!</h3>
+        
+        {projects.map((project) => (
+          <div className="text-xl my-5 text-center mx-16 ">
+            <a href={"/project/" + project.id}>
+              <h1 className="font-extrabold">{project.title}</h1>
+            </a>
+            <p>{project.desc}</p>
+          </div>
+        ))}
+          <button className="bg-blue-400 shadow-lg mx-auto w-52 shadow-black mt-5 p-3 rounded-xl" onClick={() => {
+            nav("/");
+          } }>Go Back to Space!</button>
+        </div>
+      </div>
+    
+    
+    
+       
   );
 };
 

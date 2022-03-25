@@ -3,7 +3,6 @@ import "./Style/style.css";
 
 
 // Components
-import Home from "./Components/Functional/Home";
 import Landing from "./Components/Functional/Landing";
 import AboutMe from "./Components/Functional/AboutMe";
 import Projects from "./Components/Functional/Projects";
