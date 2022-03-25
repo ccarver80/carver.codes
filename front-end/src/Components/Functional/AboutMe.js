@@ -1,105 +1,40 @@
-import React, { Suspense } from "react";
 import { useNavigate } from "react-router-dom";
-import { Canvas } from "@react-three/fiber";
-import {
-  Billboard,
-  Html,
-  Sky,
-  useTexture,
-  Cloud,
-  ScrollControls,
-  Scroll,
-} from "@react-three/drei";
 
-import gasGiant from "../Imgs/planetTexture/Gaseous1.png";
-import Loading from "../Supportive/Loading";
-
-function Plane() {
-  const gas = useTexture(gasGiant);
-  return (
-    <mesh position={[0, -5, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-      <planeBufferGeometry attach="geometry" args={[1000, 1000]} />
-      <meshLambertMaterial map={gas} />
-    </mesh>
-  );
-}
+import profile from "../Imgs/portfolio.jpeg";
 
 const AboutMe = () => {
   const nav = useNavigate();
 
   return (
-  
-      <Suspense fallback={<Loading />}>
-        <Canvas camera={{ position: [0, 10, -25] }}>
-          <ambientLight intensity={0.5} />
-
-          <Billboard position={[0, 0, 5]}>
-            <ScrollControls pages={2}>
-              <Scroll>
-                <Html fullscreen transform={true}>
-                  <div className="about-me">
-                    <p>Planet X6Gf4-R - About Me</p>
-                    <p>Class J Gas Giant</p>
-                    <h1>Chris Carver</h1>
-                    <h2>Full Stack JavaScript Developer</h2>
-                    <p>
-                      Self taught and HIGHLY motivated, full stack JavaScript
-                      developer looking for a career change. Growing up in the
-                      oil industry I have understand the value of hard work and
-                      determination. I began my journey in October 2020 learning the basics of programming
-                      and every day growing to become a software engineer.
-                      A list of my projects I have built so far can be found <a href="https://github.com/ccarver80/Tech-Degree-Projects">here.</a>
-                    </p>
-
-                   
-                    <button
-                      onClick={() => {
-                        nav("/");
-                      }}
-                      className="enter-button"
-                    >
-                      Back to space!
-                    </button>
-                  </div>
-                </Html>
-              </Scroll>
-            </ScrollControls>
-          </Billboard>
-
-          {/* Mimic fog on a gas giant */}
-          <Cloud
-            opacity={0.3}
-            position={[0, 10, 10]}
-            width={10}
-            depth={2}
-            segments={100}
-          />
-          <Cloud
-            opacity={0.3}
-            position={[0, 10, -10]}
-            width={10}
-            depth={2}
-            segments={100}
-          />
-          <Cloud
-            opacity={0.3}
-            position={[10, 10, 0]}
-            width={10}
-            depth={2}
-            segments={100}
-          />
-          <Cloud
-            opacity={0.3}
-            position={[-10, 10, 0]}
-            width={10}
-            depth={2}
-            segments={100}
-          />
-          <Sky sunPosition={[0, 1, 0]} />
-          <Plane />
-        </Canvas>
-      </Suspense>
+    <div className="flex bg-blue-400 flex-col sm:h-screen ">
+      <div className="flex shadow-2xl shadow-black rounded-2xl mt-10 w-2/4 bg-lime-100 mx-auto sm:h-36 h-24 sm:text-5xl text-3xl">
+        <h1 className=" text-black mx-auto my-auto">About Me</h1>
+      </div> 
       
+      <div className="mt-10 sm:mx-auto mx-5 ">
+          <img className="rounded-xl" src={profile} />
+          </div>
+
+      <div className="flex flex-row justify-between mx-5 p-5 shadow-black shadow-2xl rounded-2xl mt-10 bg-lime-100">
+
+          <div className=" text-3xl text-center">
+            <h1 className="text-5xl mb-5 font-extrabold">Chris Carver</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas
+              porttitor congue massa. Fusce posuere, magna sed pulvinar
+              ultricies, purus lectus malesuada libero, sit amet commodo magna
+              eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a
+              tellus. Pellentesque habitant morbi tristique senectus et netus et
+              malesuada fames ac turpis egestas. Proin pharetra nonummy pede.
+              Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet
+              nonummy augue. Suspendisse dui purus, scelerisque at, vulputate
+              vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis
+              eleifend. Ut nonummy.
+            </p>
+          </div>
+        </div>
+      </div>
+    
   );
 };
 

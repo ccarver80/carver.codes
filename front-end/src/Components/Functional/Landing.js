@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import {Link} from 'react-router-dom';
 import { Canvas } from "@react-three/fiber";
 import {
@@ -21,45 +21,54 @@ import habit from "../Imgs/planetTexture/Tropical.png";
 import blue from "../Imgs/planetTexture/blue.jpg";
 import venusmoon from "../Imgs/planetTexture/Venusian.png";
 import volcanicmoon from "../Imgs/planetTexture/Volcanic.png";
+import hand from "../Imgs/handGester.jpg"
 
 //import plantet functions
 import { Sun, Moon, Planet } from "../Supportive/Planets";
 
+
+
+
 const Landing = () => {
+  
+  useEffect(() => {
+  setTimeout(() => {
+  document.getElementById('disappear').style.display = "none"
+}, 6000)
+})
   return (
   
     <Suspense fallback={<Loading />}> 
-    <div className="flex flex-row  p-4">
+    <div className="flex flex-row p-4">
     
                <div className=" flex w-[700px] justify-between mx-auto mb-5">
                 <h3 className="sm:text-2xl">Connect with me!</h3>
                   
-                  <a href="https://www.linkedin.com/in/christopher-carver-5366871bb/" target='_blank' rel="noopener noreferrer nofollow" ><i class="fa-brands fa-linkedin fa-2xl"></i></a> 
-                  <a href="https://github.com/ccarver80" target='_blank' rel="noopener noreferrer nofollow" ><i class="fa-brands fa-github fa-2xl"></i></a>
+                  <a href="https://www.linkedin.com/in/ccarver80/" target='_blank' rel="noopener noreferrer nofollow" ><i className="fa-brands fa-linkedin fa-2xl"></i></a> 
+                  <a href="https://github.com/ccarver80" target='_blank' rel="noopener noreferrer nofollow" ><i className="fa-brands fa-github fa-2xl"></i></a>
                   <a href="mailto:ckc_80@outlook.com"><i class="fa-solid fa-envelope fa-2xl"></i></a>
-                  <a href="https://twitter.com/codingCarver" target="_blank" rel="noopener noreferrer nofollow" ><i class="fa-brands fa-twitter fa-2xl"></i></a>
-                  <a href="https://www.instagram.com/codingcarver/" target="_blank" rel="noopener noreferrer nofollow" ><i class="fa-brands fa-instagram fa-2xl"></i></a>
-                  <a href="https://www.tiktok.com/@codingcarver" target="_blank" rel="noopener noreferrer nofollow" ><i class="fa-brands fa-tiktok fa-2xl"></i></a>
+                  <a href="https://twitter.com/codingCarver" target="_blank" rel="noopener noreferrer nofollow" ><i className="fa-brands fa-twitter fa-2xl"></i></a>
+                  <a href="https://www.instagram.com/codingcarver/" target="_blank" rel="noopener noreferrer nofollow" ><i className="fa-brands fa-instagram fa-2xl"></i></a>
+                  <a href="https://www.tiktok.com/@codingcarver" target="_blank" rel="noopener noreferrer nofollow" ><i className="fa-brands fa-tiktok fa-2xl"></i></a>
                   </div>
                   </div>
-
-                
+                  
                  
                 <nav className="flex sm:text-4xl mb-5 justify-evenly">
-                  <Link to="/about" className="link">About</Link>
-                  <Link to="/projects" className="link">Projects</Link>
-                  <Link to="/contact-me" className="link">Contact</Link>
-                  <Link to="/skills" className="link">Skills</Link>
-                  <Link to="/blog" className="link">Blog</Link>
+                  <Link className="hover:text-white hover:bg-sky-900" to="/about" >About</Link>
+                  <Link className="hover:text-white hover:bg-sky-900" to="/projects" >Projects</Link>
+                  <Link className="hover:text-white hover:bg-sky-900" to="/contact-me" >Contact</Link>
+                  <Link className="hover:text-white hover:bg-sky-900" to="/skills" >Skills</Link>
+                  <Link className="hover:text-white hover:bg-sky-900" to="/blog" >Blog</Link>
                   
                 </nav> 
         
     
-
+    
     
 
      <div className="bg-black w-screen h-screen">
-      <Canvas camera={{ position: [-120, 10, 90] }}>
+      <Canvas camera={{ position: [10, 0, 140] }}>
         <ambientLight intensity={0.8} />
 
         {/* Adds spotlights all around sun making it super bright looking */}
@@ -151,23 +160,16 @@ const Landing = () => {
         />
         <Stars radius={100} count={10000} />
        
-        <Billboard position={[-95, -3, 70]}>
-        
-          <Html transform={true}>
-            
-              <div className="bg-white flex flex-col w-fit p-10 rounded-2xl ">
-                <h1 className="mx-auto my-4 text-7xl">Welcome to my corner of the universe!</h1>
-                <h2 className="mx-auto my-4 text-5xl">
-                  I'm Chris Carver, and I built this site using React, Three.js,
-                  React-Three/Fiber, and Drei
-                </h2>
+       
+             
+         
+      
+      </Canvas> </div> <div id="disappear" className="sticky bottom-0 p-5 mx-auto bg-white flex flex-col w-fit rounded-2xl ">
+                <img className="mx-auto h-24 w-24" src={hand} />
                 
-               <h3 className="mx-auto my-4 text-5xl text-red-700">Click and drag to move around and click on the planets to visit that section</h3>
+               <h3 className="mx-auto text-xl text-red-700">Click and drag to move around and click on the planets to visit that section</h3>
                
-            </div>
-          </Html>
-        </Billboard>
-      </Canvas></div>
+            </div> 
     </Suspense>
   );
 };
