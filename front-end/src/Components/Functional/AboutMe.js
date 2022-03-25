@@ -31,6 +31,9 @@ const AboutMe = () => {
               vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis
               eleifend. Ut nonummy.
             </p>
+            <button className="bg-blue-400 shadow-lg shadow-black mt-5 p-3 rounded-xl" onClick={() => {
+              nav("/")
+            }}>Go Back to Space!</button>
           </div>
         </div>
       </div>
