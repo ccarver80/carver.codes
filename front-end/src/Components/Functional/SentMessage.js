@@ -6,7 +6,7 @@ import { useTexture, Html, OrbitControls, Billboard } from "@react-three/drei";
 import savannah from '../Imgs/planetTexture/Savannah.png'
 
 
-import TimeofDay from "../Supportive/TImeofDay";
+
 import Loading from "../Supportive/Loading";
 
 function Plane() {
@@ -27,7 +27,7 @@ function SentMessage() {
         <Canvas camera={{position: [20, 5, 0]}}>
         <ambientLight intensity={0.5} />
         <OrbitControls />
-        <TimeofDay />
+       
             <Plane />
             <Billboard>
             <Html transform={true}>

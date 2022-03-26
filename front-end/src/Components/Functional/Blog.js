@@ -1,25 +1,10 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Canvas } from "@react-three/fiber";
-import { Billboard, Html, OrbitControls, useTexture } from "@react-three/drei";
 
-import Loading from "../Supportive/Loading";
-import TimeofDay from "../Supportive/TImeofDay";
 
-import tropical from "../Imgs/planetTexture/Tropical.png";
 
 import testingAPI from "../../api";
 import prodAPI  from "../../api"
-
-function Plane() {
-  const Tropical = useTexture(tropical);
-  return (
-    <mesh position={[0, -20, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-      <planeBufferGeometry attach="geometry" args={[1000, 1000]} />
-      <meshLambertMaterial map={Tropical} />
-    </mesh>
-  );
-}
 
 const Blog = () => {
   const [blogPosts, setBlogPosts] = useState([]);
@@ -36,7 +21,7 @@ const Blog = () => {
 
   const nav = useNavigate();
   return (
-    <Suspense fallback={<Loading />}>
+    
       
             <div className="blog">
               {
@@ -61,7 +46,7 @@ const Blog = () => {
               </div>
             </div>
         
-    </Suspense>
+  
   );
 };
 

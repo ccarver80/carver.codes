@@ -9,7 +9,7 @@ import {
 } from "@react-three/drei";
 
 import Loading from "../Supportive/Loading";
-import TimeofDay from "../Supportive/TImeofDay";
+
 
 import tropical from "../Imgs/planetTexture/Tropical.png";
 import { useNavigate, useParams } from "react-router-dom";
@@ -83,7 +83,7 @@ const BlogDetail = () => {
         </Billboard>
 
         <Plane />
-        <TimeofDay />
+     
       </Canvas>
     </Suspense>
   );

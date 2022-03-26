@@ -12,7 +12,7 @@ import {
 import ReactMarkdown from "react-markdown";
 
 import Loading from "../Supportive/Loading";
-import TimeofDay from "../Supportive/TImeofDay";
+
 
 import mars from "../Imgs/planetTexture/Martian.png";
 
@@ -93,7 +93,7 @@ const ProjectDetail = () => {
           </ScrollControls>
         </Billboard>
         <Plane />
-        <TimeofDay />
+       
       </Canvas>
     </Suspense>
   );

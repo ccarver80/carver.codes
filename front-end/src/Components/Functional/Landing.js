@@ -39,9 +39,9 @@ const Landing = () => {
   return (
   
     <Suspense fallback={<Loading />}> 
-    <div className="flex flex-row p-4">
+    <div className=" flex border-4 border-blue-400  bg-lime-100 flex-col p-4">
     
-               <div className=" flex w-[700px] justify-between mx-auto mb-5">
+               <div className="flex w-[700px] justify-between mx-auto mb-5">
                 <h3 className="sm:text-2xl">Connect with me!</h3>
                   
                   <a href="https://www.linkedin.com/in/ccarver80/" target='_blank' rel="noopener noreferrer nofollow" ><i className="fa-brands fa-linkedin fa-2xl"></i></a> 
@@ -51,19 +51,19 @@ const Landing = () => {
                   <a href="https://www.instagram.com/codingcarver/" target="_blank" rel="noopener noreferrer nofollow" ><i className="fa-brands fa-instagram fa-2xl"></i></a>
                   <a href="https://www.tiktok.com/@codingcarver" target="_blank" rel="noopener noreferrer nofollow" ><i className="fa-brands fa-tiktok fa-2xl"></i></a>
                   </div>
-                  </div>
+                 
                   
                  
-                <nav className="flex sm:text-4xl mb-5 justify-evenly">
-                  <Link className="hover:text-white hover:bg-sky-900" to="/about" >About</Link>
-                  <Link className="hover:text-white hover:bg-sky-900" to="/projects" >Projects</Link>
-                  <Link className="hover:text-white hover:bg-sky-900" to="/contact-me" >Contact</Link>
-                  <Link className="hover:text-white hover:bg-sky-900" to="/skills" >Skills</Link>
-                  <Link className="hover:text-white hover:bg-sky-900" to="/blog" >Blog</Link>
+                <nav className="flex mt-5 sm:text-4xl mb-5 justify-evenly">
+                  <Link className="p-1 rounded hover:text-white hover:bg-sky-900" to="/about" >About</Link>
+                  <Link className="p-1 rounded hover:text-white hover:bg-sky-900" to="/projects" >Projects</Link>
+                  <Link className="p-1 rounded hover:text-white hover:bg-sky-900" to="/contact-me" >Contact</Link>
+                  <Link className="p-1 rounded hover:text-white hover:bg-sky-900" to="/skills" >Skills</Link>
+                  <Link className="p-1 rounded hover:text-white hover:bg-sky-900" to="/blog" >Blog</Link>
                   
                 </nav> 
         
-    
+     </div>
     
     
 

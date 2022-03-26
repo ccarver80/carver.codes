@@ -1,25 +1,12 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, {  useState } from "react";
 import {useNavigate} from 'react-router-dom'
-import { Canvas } from "@react-three/fiber";
-import { useTexture, Html, OrbitControls, Billboard } from "@react-three/drei";
-
-import savannah from '../Imgs/planetTexture/Savannah.png'
 
 
-import TimeofDay from "../Supportive/TImeofDay";
-import Loading from "../Supportive/Loading";
+
+
 import testingAPI from "../../api";
 
 
-function Plane() {
-    const Savannah = useTexture(savannah);
-    return (
-      <mesh position={[0, -5, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-        <planeBufferGeometry attach="geometry" args={[1000, 1000]} />
-        <meshLambertMaterial map={Savannah} />
-      </mesh>
-    );
-  }
   
 
 function ContactMe()  {
@@ -46,54 +33,54 @@ function ContactMe()  {
 
   const nav = useNavigate();
     return(
-        <Suspense fallback={<Loading />} >
-        <Canvas camera={{position: [20, 5, 0]}}>
-        <ambientLight intensity={0.5} />
-        <OrbitControls />
-        <TimeofDay />
-            <Plane />
-            <Billboard>
-            <Html transform={true}>
-                <div className="contact-form">
-                <form onSubmit={sendContact}>
-        <label htmlFor="name">Name:</label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          required="true"
-          onChange={(e) => setContact({ ...contact, name: e.target.value })}
-        />
+        <>
+    <div className="flex bg-blue-400">
+      
+       <form className="bg-lime-100 shadow-2xl shadow-black p-5 flex flex-col mx-auto my-auto sm:text-5xl" onSubmit={sendContact}>
+       <h1 className="mx-auto">Contact me!</h1>
+          <label className="mb-5" htmlFor="name">Name:</label>
+              <input
+                  className="mb-10 border-2 border-black"
+                  id="name"
+                  name="name"
+                  type="text"
+                  required="true"
+                  onChange={(e) => setContact({ ...contact, name: e.target.value })}
+                />
 
-        <label htmlFor="emai">Email:</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required="true"
-          onChange={(e) => setContact({ ...contact, email: e.target.value })}
-        />
+          <label className="mb-5" htmlFor="emai">Email:</label>
+                <input
+                  className="mb-10 border-2 border-black"
+                  id="email"
+                  name="email"
+                  type="email"
+                  required="true"
+                  onChange={(e) => setContact({ ...contact, email: e.target.value })}
+                />
 
-        <label htmlFor="message">Message</label>
-        <textarea 
-          id="message"
-          name="message"
-          type="text"
-          required="true"
-          onChange={(e) => setContact({ ...contact, message: e.target.value })}
-        ></textarea>
+           <label className="mb-5" htmlFor="message">Message:</label>
+                <textarea 
+                  className="mb-10 h-64 border-2 border-black"
+                  id="message"
+                  name="message"
+                  type="text"
+                  required="true"
+                  onChange={(e) => setContact({ ...contact, message: e.target.value })}
+                ></textarea>
 
       
-        <button type="submit">Send Message</button>
-      </form></div>
-                    <div><button onClick={()=> {
-                  nav('/')
-                }} className="enter-button">Back to space!</button></div>
+                          <button className="bg-blue-400 w-fit mx-auto p-5 rounded" type="submit">Send Message</button> 
+                          
+                          <button onClick={()=> {
+                                   nav('/')
+                              }} className="bg-red-400 w-fit mx-auto p-5 rounded mt-5">Back to space!</button>
+      </form>
+                   
+    </div>
+
+
                 
-            </Html>
-            </Billboard>
-        </Canvas>
-        </Suspense>
+      </>
     )
 }
 

@@ -7,8 +7,8 @@ import {
   useTexture,
 } from "@react-three/drei";
 
-import Loading from "../Supportive/Loading";
-import TimeofDay from "../Supportive/TImeofDay";
+
+
 
 import mars from "../Imgs/planetTexture/Martian.png";
 
@@ -46,19 +46,14 @@ const Projects = () => {
   }, []);
 
 
-  for (let i = 1; i <= Math.ceil(pages); i++) {
-    pageNumbers.push(i);
-  }
+  
 
   
-  function pageClick(range) {
-    console.log(range)
-  }
 
   const nav = useNavigate();
   return (
 
-    <div className="flex bg-blue-400 flex-col sm:h-screen ">
+    <div className="flex bg-blue-400 flex-col h-screen ">
       <div className="flex shadow-2xl shadow-black rounded-2xl mt-10 w-2/4 bg-lime-100 mx-auto sm:h-36 h-24 sm:text-5xl text-3xl">
         <h1 className=" text-black mx-auto my-auto">Projects</h1>
       </div>
