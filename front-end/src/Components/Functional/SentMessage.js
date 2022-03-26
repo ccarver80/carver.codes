@@ -1,46 +1,27 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React from "react";
 import {useNavigate} from 'react-router-dom'
-import { Canvas } from "@react-three/fiber";
-import { useTexture, Html, OrbitControls, Billboard } from "@react-three/drei";
-
-import savannah from '../Imgs/planetTexture/Savannah.png'
 
 
 
-import Loading from "../Supportive/Loading";
 
-function Plane() {
-    const Savannah = useTexture(savannah);
-    return (
-      <mesh position={[0, -5, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-        <planeBufferGeometry attach="geometry" args={[1000, 1000]} />
-        <meshLambertMaterial map={Savannah} />
-      </mesh>
-    );
-  }
+
   
 
 function SentMessage() {
     const nav = useNavigate();
     return(
-        <Suspense fallback={<Loading />} >
-        <Canvas camera={{position: [20, 5, 0]}}>
-        <ambientLight intensity={0.5} />
-        <OrbitControls />
-       
-            <Plane />
-            <Billboard>
-            <Html transform={true}>
-            <div className="contact-form">
-                <h1>Your message was sent!</h1>
-               
-                </div> 
-                <button className="enter-button" onClick={() => nav('/contact-me')}>Go back?</button>
-                <button className="enter-button" onClick={() => nav('/landing')}>Go to Space!</button>
-            </Html>
-            </Billboard>
-        </Canvas>
-        </Suspense>
+       <div className="flex  bg-blue-400 h-screen">
+         <div className=" flex rounded-xl shadow-2xl shadow-black flex-col mx-auto my-auto h-96 p-10 bg-lime-200 ">
+           <h1 className="mx-auto my-auto text-4xl">Your message was sent!</h1>
+           <button onClick={()=> {
+                                   nav('/contact-me')
+                              }} className="bg-blue-400 w-fit mx-auto p-5 rounded">Go back</button>
+           <button onClick={()=> {
+                                   nav('/')
+                              }} className="bg-red-400 w-fit mx-auto p-5 rounded mt-5">Go to space!</button>
+         </div>
+       </div>
+      
     )
 }
 
