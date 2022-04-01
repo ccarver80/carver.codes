@@ -7,7 +7,7 @@ const AboutMe = () => {
 
   return (
     <div className="flex bg-blue-400 pb-5 flex-col sm:h-screen ">
-      <div className="flex shadow-2xl shadow-black rounded-2xl mt-10 w-2/4 bg-lime-100 border-2 border-red-600 mx-auto sm:h-36 h-24 sm:text-5xl text-3xl">
+      <div className="flex shadow-2xl shadow-black rounded-2xl mt-10 w-2/4 bg-white border-2 border-red-600 mx-auto sm:h-36 h-24 sm:text-5xl text-3xl">
         <h1 className=" text-black mx-auto my-auto">About Me</h1>
       </div>
 
@@ -15,7 +15,7 @@ const AboutMe = () => {
         <img className="rounded-xl shadow-2xl shadow-black" src={profile} alt="profile"/>
       </div>
 
-      <div className="flex flex-row justify-between mx-5 p-5 shadow-black shadow-2xl rounded-2xl mt-10 bg-lime-100 border-2 border-red-600">
+      <div className="flex flex-row justify-between mx-5 p-5 shadow-black shadow-2xl rounded-2xl mt-10 bg-white  border-2 border-red-600">
         <div className="flex flex-col text-3xl mx-auto">
           <h1 className="text-5xl text-center mb-5 font-extrabold">
             Chris Carver
