@@ -39,11 +39,11 @@ const Landing = () => {
   return (
   
     <Suspense fallback={<Loading />}> 
-    <div className=" flex border-4 border-blue-400  bg-lime-100 flex-col p-4">
+    <div className=" flex w-full border-4 border-blue-400  flex-col">
     
-               <div className="flex w-[700px] justify-between mx-auto mb-5">
-                <h3 className="sm:text-2xl">Connect with me!</h3>
-                  
+               <div className="flex mt-5 sm:w-2/4 mx-auto mb-5 justify-evenly">
+                <h3 className="">Connect with me!</h3>
+                 
                   <a href="https://www.linkedin.com/in/ccarver80/" target='_blank' rel="noopener noreferrer nofollow" ><i className="fa-brands fa-linkedin fa-2xl"></i></a> 
                   <a href="https://github.com/ccarver80" target='_blank' rel="noopener noreferrer nofollow" ><i className="fa-brands fa-github fa-2xl"></i></a>
                   <a href="mailto:ckc_80@outlook.com"><i class="fa-solid fa-envelope fa-2xl"></i></a>
@@ -51,6 +51,7 @@ const Landing = () => {
                   <a href="https://www.instagram.com/codingcarver/" target="_blank" rel="noopener noreferrer nofollow" ><i className="fa-brands fa-instagram fa-2xl"></i></a>
                   <a href="https://www.tiktok.com/@codingcarver" target="_blank" rel="noopener noreferrer nofollow" ><i className="fa-brands fa-tiktok fa-2xl"></i></a>
                   </div>
+                  
                  
                   
                  
