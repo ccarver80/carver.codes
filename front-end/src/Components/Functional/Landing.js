@@ -4,12 +4,12 @@ import { Canvas } from "@react-three/fiber";
 import {
   OrbitControls,
   Stars,
-  Html,
   ContactShadows,
-  Billboard,
 } from "@react-three/drei";
+
 import Loading from "../Supportive/Loading";
 import '../../Style/style.css'
+import testingAPI from "../../api";
 
 //Textures for planets
 import gasy from "../Imgs/planetTexture/Gaseous1.png";
@@ -32,6 +32,16 @@ import { Sun, Moon, Planet } from "../Supportive/Planets";
 const Landing = () => {
   
   useEffect(() => {
+    //Fetch request when website first loads to turn my server on if its sleeping 
+    const fetchProjects = async () => {
+      await fetch(testingAPI + "api/projects")
+        .then((res) => res.json())
+        .then((data) => {
+         console.log("Turned on server")
+        });
+    };
+    fetchProjects()
+    //Timeout method for small instructions on how to navigate solar system
   setTimeout(() => {
   document.getElementById('disappear').style.display = "none"
 }, 6000)
@@ -166,7 +176,7 @@ const Landing = () => {
          
       
       </Canvas> </div> <div id="disappear" className="sticky bottom-0 p-5 mx-auto bg-white flex flex-col w-fit rounded-2xl ">
-                <img className="mx-auto h-24 w-24" src={hand} />
+                <img className="mx-auto h-24 w-24" alt="gesture hand" src={hand} />
                 
                <h3 className="mx-auto text-xl text-red-700">Click and drag to move around and click on the planets to visit that section</h3>
                
