@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 
 import testingAPI from "../../api";
-import prodAPI  from "../../api"
+
 
 const Blog = () => {
   const [blogPosts, setBlogPosts] = useState([]);
@@ -14,6 +14,7 @@ const Blog = () => {
       await fetch(testingAPI + "api/blog")
         .then((res) => res.json())
         .then((data) => setBlogPosts(data));
+        console.log('fetched')
     };
 
     fetchBlog();
@@ -23,7 +24,7 @@ const Blog = () => {
   return (
 
     <div className="flex  bg-blue-400 h-screen">
-    <div className=" flex rounded-xl shadow-2xl shadow-black flex-col mx-auto my-auto h-96 p-10 bg-lime-200 ">
+    <div className=" flex rounded-xl shadow-2xl shadow-black flex-col mx-auto my-auto h-96 p-10 bg-white ">
       <h1 className="mx-auto my-auto text-4xl">Comming Soon!!!!</h1>
       <button onClick={()=> {
                                    nav('/')
@@ -32,29 +33,7 @@ const Blog = () => {
       </div>
     
       
-            // <div className="blog">
-            //   {
-            //      blogPosts.map((post) => (
-            //        <div className="blogList">
-            //         <a href={"/blog/" + post.id}>
-            //           <h1>{post.title}</h1>
-            //           <h2>{post.createdAt}</h2>
-            //           </a>
-            //         </div>
-            //       ))
-            //     }
-            //   <div>
-            //     <button
-            //       onClick={() => {
-            //         nav("/");
-            //       }}
-            //       className="enter-button"
-            //     >
-            //       Back to space!
-            //     </button>
-            //   </div>
-            // </div>
-        
+          
   
   );
 };

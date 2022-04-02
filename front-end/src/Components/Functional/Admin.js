@@ -7,6 +7,7 @@ const Delete = async (endpoint, id) => {
   await fetch(testingAPI + "api/" + endpoint + `/${id}`, {
     method: "DELETE",
   });
+  
 };
 
 function Admin() {
@@ -36,7 +37,7 @@ function Admin() {
     fetchProjects();
     fetchBlog();
     fetchMail()
-  }, [projects, blogPosts, mail]);
+  }, []);
 
   return (
     <div className='flex flex-col p-5 w-11/12 mx-auto '>
@@ -58,7 +59,7 @@ function Admin() {
       <div className="flex flex-col text-2xl">
         <h1 className="text-center text-4xl font-extrabold">Projects:</h1>
         {projects.map((project) => (
-          <div className="mt-10 rounded shadow-xl shadow-black border-2 border-black  bg-blue-400 text-center">
+          <div className="mt-10 p-2 rounded shadow-xl shadow-black border-2 border-black  bg-blue-400 text-center">
             <a href={"/project/" + project.id}>
               <h1>{project.title}</h1>
             </a>
@@ -80,15 +81,18 @@ function Admin() {
 
 
 
-
+{/* Blog Section */}
       <div className="flex flex-col text-2xl">
         <h1 className="text-center text-4xl font-extrabold sm:mt-0 mt-10">Blog:</h1>
         {blogPosts.map((post) => (
-          <div className="mt-10 rounded shadow-xl shadow-black border-2 border-black  bg-blue-400 text-center">
+          <div className="mt-10 p-2 rounded shadow-xl shadow-black border-2 border-black  bg-blue-400 text-center">
             <a href={"/blog/" + post.id}>
               <h1>{post.title}</h1>
             </a>
-            <button className="bg-red-500 p-2 m-2" onClick={() => Delete("blog", post.id)}>
+            <button className="bg-red-500 p-2 m-2" onClick={() => {
+              Delete("blog", post.id)
+              
+              }}>
               Delete?
             </button>
             <button className="bg-green-600 p-2 m-2">Edit?</button>

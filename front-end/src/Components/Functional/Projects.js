@@ -32,7 +32,7 @@ const Projects = () => {
         {projects.map((project) => (
         
           <a href={"/project/" + project.id}>
-            <div className="text-xl p-5 w-fit border-2 border-blue-600 my-5 text-center mx-auto ">
+            <div className="text-xl p-5 w-fit border-2 border-black shadow-lg shadow-black my-5 text-center mx-auto ">
               <h1 className="font-extrabold">{project.title}</h1>
             </div>{" "}
           </a>

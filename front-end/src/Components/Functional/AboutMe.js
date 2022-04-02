@@ -25,9 +25,7 @@ const AboutMe = () => {
             Chris Carver
           </h1>
 
-          <h3 className="text-2xl text-center mb-2 font-bold">
-            Software Developer
-          </h3>
+         
           <p>
             I have been working in the oil and gas industry for 14 years. In
             2020 I realized it was time for a career change, and I started

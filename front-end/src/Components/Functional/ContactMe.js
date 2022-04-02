@@ -36,7 +36,7 @@ function ContactMe()  {
         <>
     <div className="flex bg-blue-400">
       
-       <form className="bg-lime-100 shadow-2xl shadow-black p-5 flex flex-col mx-auto my-auto sm:text-5xl" onSubmit={sendContact}>
+       <form className="bg-white shadow-2xl shadow-black p-5 flex flex-col mx-auto my-auto sm:text-5xl" onSubmit={sendContact}>
        <h1 className="mx-auto">Contact me!</h1>
           <label className="mb-5" htmlFor="name">Name:</label>
               <input
