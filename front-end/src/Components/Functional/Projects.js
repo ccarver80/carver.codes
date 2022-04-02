@@ -30,6 +30,7 @@ const Projects = () => {
         <h3 className="text-3xl mx-auto">Click on a project to learn more!</h3>
 
         {projects.map((project) => (
+        
           <a href={"/project/" + project.id}>
             <div className="text-xl p-5 w-fit border-2 border-blue-600 my-5 text-center mx-auto ">
               <h1 className="font-extrabold">{project.title}</h1>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+
 
 import testingAPI from "../../api";
 
@@ -37,30 +36,34 @@ function Admin() {
     fetchProjects();
     fetchBlog();
     fetchMail()
-  }, []);
+  }, [projects, blogPosts, mail]);
 
   return (
-    <div className="admin">
-      <h1>Admin page</h1>
-      <div className="admin-buttons">
+    <div className='flex flex-col p-5 w-11/12 mx-auto '>
+      
+      <div className="bg-white w-fit mx-auto text-center ">
+      <h1 className="text-2xl">Admin page</h1>
         <a href="/admin/post-project">
-          <button className="addProject">Add Project</button>
+          <button className="bg-blue-400 m-5 p-5 text-2xl">Add Project</button>
         </a>
 
         <a href="/admin/post-blog">
-          <button className="addProject">Add Blog Post</button>
+          <button className="bg-blue-400 m-5 p-5 text-2xl">Add Blog Post</button>
         </a>
       </div>
 
-      <div className="col">
-        <h1>Projects:</h1>
+
+
+    <div className="flex sm:flex-row mt-10 flex-col justify-between">
+      <div className="flex flex-col text-2xl">
+        <h1 className="text-center text-4xl font-extrabold">Projects:</h1>
         {projects.map((project) => (
-          <div className="List">
+          <div className="mt-10 rounded shadow-xl shadow-black border-2 border-black  bg-blue-400 text-center">
             <a href={"/project/" + project.id}>
               <h1>{project.title}</h1>
             </a>
             <button
-              className="delete"
+              className="bg-red-500 p-2 m-2"
               onClick={() => {
                 Delete("projects", project.id)
                 
@@ -69,34 +72,42 @@ function Admin() {
             >
               Delete?
             </button>
-            <button className="edit">Edit?</button>
+            <button className="bg-green-600 p-2 m-2">Edit?</button>
           </div>
         ))}
       </div>
 
-      <div className="col">
-        <h1>Blog:</h1>
+
+
+
+
+      <div className="flex flex-col text-2xl">
+        <h1 className="text-center text-4xl font-extrabold sm:mt-0 mt-10">Blog:</h1>
         {blogPosts.map((post) => (
-          <div className="List">
+          <div className="mt-10 rounded shadow-xl shadow-black border-2 border-black  bg-blue-400 text-center">
             <a href={"/blog/" + post.id}>
               <h1>{post.title}</h1>
             </a>
-            <button className="delete" onClick={() => Delete("blog", post.id)}>
+            <button className="bg-red-500 p-2 m-2" onClick={() => Delete("blog", post.id)}>
               Delete?
             </button>
-            <button className="edit">Edit?</button>
+            <button className="bg-green-600 p-2 m-2">Edit?</button>
           </div>
         ))}
       </div>
-      <div className="col">
-        <h1>Mail:</h1>
+
+
+
+
+      <div className="flex flex-col text-2xl">
+        <h1 className="text-center sm:mt-0 mt-10 text-4xl font-extrabold">Mail:</h1>
         {mail.map((mail) => (
-          <div className="List">
+          <div className="mt-10 rounded shadow-xl shadow-black border-2 border-black  bg-blue-400 text-center">
             <a href={"/admin/mail/" + mail.id}>
               <h1>From: {mail.name}</h1>
             </a>
             <button
-              className="delete"
+              className="bg-red-500 p-2 m-2"
               onClick={() => Delete("mail", mail.id)}
             >
               Delete?
@@ -104,6 +115,10 @@ function Admin() {
           </div>
         ))}
       </div>
+
+</div>
+
+
     </div>
   );
 }

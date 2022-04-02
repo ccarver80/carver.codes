@@ -28,12 +28,13 @@ function PostBlog() {
   };
 
   return (
-    <div className="post-blog">
-      <form onSubmit={createblog}>
+    <div className="flex flex-col bg-blue-400 h-screen">
+      <form className="my-auto mx-auto py-5 bg-white sm:w-2/4 sm:h-2/4 flex flex-col border-2 border-black shadow-xl shadow-black" onSubmit={createblog}>
 
-          
-            <label htmlFor="title">Title</label>
+      <div className="my-auto flex flex-col">
+            <label className="text-center text-4xl" htmlFor="title">Title</label>
             <input
+             className=" text-2xl border-4 border-black w-3/4 mx-auto"
               id="title"
               name="title"
               type="text"
@@ -42,17 +43,19 @@ function PostBlog() {
 
             <p></p>
 
-            <label htmlFor="blogpost">Blog Post</label>
+            <label className="text-center mt-10 text-4xl" htmlFor="blogpost">Blog Post</label>
             <textarea
+             className=" text-2xl border-4 h-56 border-black w-5/6  mx-auto"
               id="blogpost"
               name="blogpost"
               onChange={(e) => setBlog({ ...blog, post: e.target.value })}
             ></textarea>
         
        
-        <button type="submit">
+        <button className="text-2xl border-2 border-black bg-blue-400 w-fit mx-auto mt-5 p-5 rounded" type="submit">
           Post Blog
         </button>
+        </div>
       </form>
     </div>
   );
